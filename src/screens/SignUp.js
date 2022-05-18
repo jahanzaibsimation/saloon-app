@@ -1,16 +1,51 @@
 import { StyleSheet, Image, ScrollView, TouchableOpacity, View, SafeAreaView, Pressable } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { Box, Button, Center, CheckIcon, FormControl, Text, Heading, Input, Select, VStack, Checkbox, HamburgerIcon, Menu, Divider } from 'native-base'
-import CountryPicker from 'react-native-country-picker-modal'
 import PhoneInput from 'react-native-phone-input'
 import DateTimePickerModal from "react-native-modal-datetime-picker";
-import states from '../../dummyData/states.json'
-import cities from '../../dummyData/cities.json'
 import { levels } from '../../dummyData/data'
 import moment from 'moment'
 
 
+//import customizeData from "../../CustomizeCity/customizeCities.json"
+import sampleData from "../../CustomizeCity/sample.json";
+
+const DropdownMenu = () => {
+    const menu = [];
+
+    sampleData.forEach((data) => {
+      const menuItem = [];
+      data.city.forEach((city) => {
+        menuItem.push(<Menu.Item key={city}>{city}</Menu.Item>);
+      });
+      menu.push(
+        <Menu.Group key={data.stateCode} title={data.state}>
+          {menuItem}
+        </Menu.Group>
+      );
+    });
+   
+  return (
+    <Menu
+      closeOnSelect={false}
+      onOpen={() => console.log("opened")}
+      onClose={() => console.log("closed")}
+      trigger={(triggerProps) => {
+        return (
+          <Pressable {...triggerProps}>
+            <HamburgerIcon />
+          </Pressable>
+        );
+      }}
+    >
+      {menu}
+    </Menu>
+  );
+}
 const SignUp = () => {
+
+
+    //console.log(customizeCities);
     const [city, setCity] = useState({})
     const [level, setLevel] = useState({})
     const [vis, setVis] = useState(true)
@@ -83,6 +118,7 @@ const SignUp = () => {
                 <Center w="100%" h="90%">
                     <Box safeArea w="100%" maxW="290" >
                         <Image resizeMode="contain" style={{ width: 250 }} source={require('../../assets/logos/Full-Logo-Midnight-Blue.png')} />
+                        <DropdownMenu/>
                         <Heading size="lg" color="coolGray.800" _dark={{
                             color: "warmGray.50"
                         }} fontWeight="semibold">
