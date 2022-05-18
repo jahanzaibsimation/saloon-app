@@ -22,19 +22,19 @@ const SignUp = () => {
 
     useEffect(() => {
 
-        const c = states.map(state => {
-            let a = cities.filter(city => city.stateCode === state.isoCode)
-            a = a.map(val => val.name)
-            return {
-                state: state.name,
-                city: a
-            }
+        // const c = states.map(state => {
+        //     let a = cities.filter(city => city.stateCode === state.isoCode)
+        //     a = a.map(val => val.name)
+        //     return {
+        //         state: state.name,
+        //         city: a
+        //     }
 
-        })
+        // })
 
-        console.log(c)
+        // console.log(c)
 
-        setCity(c)
+        // setCity(c)
 
 
     }, [])
@@ -174,7 +174,7 @@ const SignUp = () => {
                                     </Pressable>
                                 }}>
                                     <View style={{ width: '90%', justifyContent: 'center', alignItems: 'center' }} >
-                                        {city.map(val, i => <Text key={i}>{val.state}</Text>)}
+                                    
 
                                         {/* {city.map(val => (
                                             <Menu.OptionGroup title={val.state} type="radio">
