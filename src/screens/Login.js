@@ -1,5 +1,6 @@
 import { Box, Button, Center, FormControl, Heading, HStack, Input, Link, Text, VStack } from "native-base";
 import { Image } from 'react-native'
+import { blue } from "../utils/Color";
 
 export const Login = () => {
   return <Center w="100%">
@@ -33,7 +34,7 @@ export const Login = () => {
             Forget Password?
           </Link>
         </FormControl>
-        <Button style={{ borderRadius: 50 }} mt="2" colorScheme="indigo">
+        <Button style={{ borderRadius: 50 }} backgroundColor={blue} mt="2" colorScheme="indigo">
           Sign in
         </Button>
         <HStack mt="6" justifyContent="center">

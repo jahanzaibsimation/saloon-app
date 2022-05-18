@@ -1,3 +1,3 @@
-export const first = 'first'
+export const blue = '#090C4E'
 
-rnf
+export const white = '#ffffff'

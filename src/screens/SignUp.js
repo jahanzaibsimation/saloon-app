@@ -1,50 +1,19 @@
-import { StyleSheet, Image, ScrollView, TouchableOpacity, View, SafeAreaView, Pressable } from 'react-native'
-import React, { useEffect, useState } from 'react'
-import { Box, Button, Center, CheckIcon, FormControl, Text, Heading, Input, Select, VStack, Checkbox, HamburgerIcon, Menu, Divider } from 'native-base'
+import { StyleSheet, Image, ScrollView, TouchableOpacity, SafeAreaView, } from 'react-native'
+import React, { useState } from 'react'
+import { Box, Button, Center, CheckIcon, FormControl, Text, Heading, Select, Input, VStack, Checkbox } from 'native-base'
 import PhoneInput from 'react-native-phone-input'
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import { levels } from '../../dummyData/data'
 import moment from 'moment'
+import PickerModal from 'react-native-picker-modal-view';
+import cityData from '../../dummyData/city.json'
+import { blue, white } from '../utils/Color';
 
 
-//import customizeData from "../../CustomizeCity/customizeCities.json"
-import sampleData from "../../CustomizeCity/sample.json";
-
-const DropdownMenu = () => {
-    const menu = [];
-
-    sampleData.forEach((data) => {
-      const menuItem = [];
-      data.city.forEach((city) => {
-        menuItem.push(<Menu.Item key={city}>{city}</Menu.Item>);
-      });
-      menu.push(
-        <Menu.Group key={data.stateCode} title={data.state}>
-          {menuItem}
-        </Menu.Group>
-      );
-    });
-   
-  return (
-    <Menu
-      closeOnSelect={false}
-      onOpen={() => console.log("opened")}
-      onClose={() => console.log("closed")}
-      trigger={(triggerProps) => {
-        return (
-          <Pressable {...triggerProps}>
-            <HamburgerIcon />
-          </Pressable>
-        );
-      }}
-    >
-      {menu}
-    </Menu>
-  );
-}
 const SignUp = () => {
 
-
+    const [selectedItem, setSelectedItem] = useState({})
+    const [arr, setArr] = useState(new Array(1000).fill('Hello World'));
     //console.log(customizeCities);
     const [city, setCity] = useState({})
     const [level, setLevel] = useState({})
@@ -55,25 +24,6 @@ const SignUp = () => {
     const [isDohPickerVisible, setIsDohPickerVisibility] = useState(false);
 
 
-    useEffect(() => {
-
-        // const c = states.map(state => {
-        //     let a = cities.filter(city => city.stateCode === state.isoCode)
-        //     a = a.map(val => val.name)
-        //     return {
-        //         state: state.name,
-        //         city: a
-        //     }
-
-        // })
-
-        // console.log(c)
-
-        // setCity(c)
-
-
-    }, [])
-
 
     const showDatePicker = (isDob) => {
         if (isDob) {
@@ -83,6 +33,20 @@ const SignUp = () => {
             setIsDohPickerVisibility(true)
         }
     };
+    const onClosed = () => {
+        console.log('close key pressed');
+    }
+
+    const onSelected = (selected) => {
+        console.log(selected)
+        setSelectedItem(selected);
+
+        return selected;
+    }
+
+    const onBackButtonPressed = () => {
+        console.log('back key pressed');
+    }
 
     const hideDatePicker = (isDob) => {
         if (isDob) {
@@ -118,7 +82,7 @@ const SignUp = () => {
                 <Center w="100%" h="90%">
                     <Box safeArea w="100%" maxW="290" >
                         <Image resizeMode="contain" style={{ width: 250 }} source={require('../../assets/logos/Full-Logo-Midnight-Blue.png')} />
-                        <DropdownMenu/>
+
                         <Heading size="lg" color="coolGray.800" _dark={{
                             color: "warmGray.50"
                         }} fontWeight="semibold">
@@ -141,7 +105,7 @@ const SignUp = () => {
                             <FormControl>
                                 <FormControl.Label>Current Level:*</FormControl.Label>
 
-                                <Select selectedValue={level} minWidth="200" accessibilityLabel="Choose Service" placeholder="Choose Service" _selectedItem={{
+                                <Select selectedValue={level} minWidth="200" accessibilityLabel="Choose Levels" placeholder="Choose Levels" _selectedItem={{
                                     bg: "teal.600",
                                     endIcon: <CheckIcon size="5" />
                                 }} mt={1} onValueChange={itemValue => setLevel(itemValue)}>
@@ -190,63 +154,44 @@ const SignUp = () => {
                             <FormControl>
                                 <FormControl.Label>Location:*</FormControl.Label>
 
+                                {console.log(typeof selectedItem)}
+                                <PickerModal
+                                    renderSelectView={(disabled, selected, showModal) =>
 
-                                {/* <Select selectedValue={country} minWidth="200" accessibilityLabel="Choose Service" placeholder="Choose Service" _selectedItem={{
-                                            bg: "teal.600",
-                                            endIcon: <CheckIcon size="5" />
-                                        }} mt={1} onValueChange={itemValue => setCountry(itemValue)}>
-                                            
-                                            <Select.Item  label="UX Research" value="ux" />
-                                            <Select.Item label="Web Development" value="web" />
-                                            <Select.Item label="Cross Platform Development" value="cross" />
-                                            <Select.Item label="UI Designing" value="ui" />
-                                            <Select.Item label="Backend Development" value="backend" />
-                                        </Select> */}
-                                <Menu onOpen={() => console.log("opened")} onClose={() => console.log("closed")} trigger={triggerProps => {
-                                    return <Pressable {...triggerProps}>
-                                        <Box p={3} borderWidth='1' borderColor='coolGray.300' borderRadius="md" >
-                                            <Text >Please Select City</Text>
-                                        </Box>
-                                    </Pressable>
-                                }}>
-                                    <View style={{ width: '90%', justifyContent: 'center', alignItems: 'center' }} >
-                                    
-
-                                        {/* {city.map(val => (
-                                            <Menu.OptionGroup title={val.state} type="radio">
-                                                <Divider />
-
-                                                <Menu.ItemOption value="asc">Hello</Menu.ItemOption>
-
-
-                                            </Menu.OptionGroup>
-                                        ))} */}
+                                    (
+                                        <TouchableOpacity disabled={disabled} onPress={showModal}>
+                                            <Box p={3} borderWidth='1' borderColor='coolGray.300' borderRadius="md" >
+                                                <Text >{
+                                                    Object.keys(selectedItem).length > 0 ? selectedItem.Name :
+                                                        'Please Select City'}</Text>
+                                            </Box>
+                                        </TouchableOpacity>
+                                    )
+                                    }
+                                    onSelected={onSelected}
+                                    onClosed={onClosed}
+                                    onBackButtonPressed={onBackButtonPressed}
+                                    items={cityData}
+                                    sortingLanguage={'tr'}
+                                    showToTopButton={true}
+                                    selected={selectedItem}
+                                    showAlphabeticalIndex={true}
+                                    autoGenerateAlphabeticalIndex={true}
+                                    selectPlaceholderText={'Choose one...'}
+                                    onEndReached={() => console.log('list ended...')}
+                                    searchPlaceholderText={'Search...'}
+                                    requireSelection={false}
+                                    autoSort={false}
+                                />
 
 
-
-                                    </View>
-                                </Menu>
-
-
-
-                                {/* <CountryPicker
-
-                                    countryCode={countryCode}
-                                    withFilter
-                                    withFlag
-                                    withCountryNameButton
-                                    withAlphaFilter
-
-                                    // onSelect={val => [setCountry(val), setVis(false)]}
-                                    onSelect={val => handleCountryPicker(val)}
-                                /> */}
                             </FormControl>
 
                             <Checkbox width='4/5' >
                                 I agree not to share, copy, or sell any resources or personal data found on SalonsSymphony
                             </Checkbox>
 
-                            <Button mt="2" colorScheme="indigo">
+                            <Button mt="2" backgroundColor={blue}>
                                 Sign up
                             </Button>
                         </VStack>
@@ -255,7 +200,7 @@ const SignUp = () => {
 
                 </Center>
             </SafeAreaView>
-        </ScrollView>
+        </ScrollView >
     )
 }
 const styles = StyleSheet.create({
