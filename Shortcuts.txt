@@ -1,0 +1,3 @@
+rxconst => React Native Export constant
+
+rnfes => React Native Functional Components with styles
