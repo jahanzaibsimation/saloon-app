@@ -6,16 +6,21 @@ import React from 'react'
 import SignUp from './src/screens/SignUp';
 import { NavigationContainer } from '@react-navigation/native';
 import { MyDrawer } from './src/navigations/MyDrawer';
+import { MainDrawerNavigation } from './src/navigations/MainDrawerNavigation';
 
 export default function App() {
   return (
-    <NativeBaseProvider>  
+    // <NativeBaseProvider>
+    //   <SignUp />
+    // </NativeBaseProvider>
+    <NativeBaseProvider>
       <NavigationContainer>
-          <MyDrawer />
-        </NavigationContainer>
-        <StatusBar style="auto" />
+        {/* <MainDrawerNavigation /> */}
+        <MyDrawer />
+      </NavigationContainer>
+      <StatusBar style="auto" />
     </NativeBaseProvider>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -23,6 +28,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#FBFCFF',
     justifyContent: 'center',
     alignItems: 'center',
-    flex:1
+    flex: 1
   },
 });
