@@ -9,15 +9,11 @@ import { MyDrawer } from './src/navigations/MyDrawer';
 
 export default function App() {
   return (
-    <NativeBaseProvider>
-      <View style={styles.container}>
-        {/* <SignUp /> */}
-        {/* <Login /> */}
-        <NavigationContainer>
+    <NativeBaseProvider>  
+      <NavigationContainer>
           <MyDrawer />
         </NavigationContainer>
         <StatusBar style="auto" />
-      </View>
     </NativeBaseProvider>
   );
 }
@@ -26,6 +22,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#FBFCFF',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    flex:1
   },
 });
