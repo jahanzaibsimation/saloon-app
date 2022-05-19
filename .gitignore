@@ -12,3 +12,8 @@ web-build/
 
 # macOS
 .DS_Store
+
+#Lock Files
+yarn.lock
+yarn.error.log
+package-lcok.json
