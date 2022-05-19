@@ -21,11 +21,11 @@ export const Login = () => {
       <VStack space={3} mt="5">
         <FormControl>
           <FormControl.Label>Email ID</FormControl.Label>
-          <Input variant="rounded" />
+          <Input size='md' />
         </FormControl>
         <FormControl>
           <FormControl.Label>Password</FormControl.Label>
-          <Input variant="rounded" type="password" />
+          <Input size='md' type="password" />
           <Link _text={{
             fontSize: "xs",
             fontWeight: "500",
@@ -34,7 +34,7 @@ export const Login = () => {
             Forget Password?
           </Link>
         </FormControl>
-        <Button style={{ borderRadius: 50 }} backgroundColor={blue} mt="2" colorScheme="indigo">
+        <Button backgroundColor={blue} mt="2">
           Sign in
         </Button>
         <HStack mt="6" justifyContent="center">
