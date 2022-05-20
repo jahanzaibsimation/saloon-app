@@ -6,42 +6,53 @@ export const drawerData = [
             name: 'bell',
             service: 'FontAwesome5',
         },
+    },
+    {
         id: 2,
         name: 'Performance',
         icon: {
             name: 'piechart',
             service: 'AntDesign',
-        },
+        }
+    },
+    {
         id: 3,
         name: 'Engagement',
         icon: {
             name: 'like1',
             service: 'AntDesign',
         },
+    },
+    {
         id: 4,
         name: 'Development',
         icon: {
             name: 'graduation-cap',
             service: 'FontAwesome',
         },
+    },
+    {
         id: 5,
         name: 'Onboarding',
         icon: {
             name: 'text-box-check',
             service: 'MaterialCommunityIcons',
         },
+    },
+    {
         id: 6,
         name: 'Employees',
         icon: {
             name: 'user-cog',
             service: 'FontAwesome5',
         },
+    },
+    {
         id: 7,
-        name: 'FontAwesome5',
+        name: 'Resources',
         icon: {
-            name: 'like1',
-            service: 'paperclip',
+            name: 'paperclip',
+            service: 'FontAwesome5',
         },
-
     }
 ]

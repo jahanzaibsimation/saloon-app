@@ -7,27 +7,33 @@ import SignUp from './src/screens/SignUp';
 import { NavigationContainer } from '@react-navigation/native';
 import { MyDrawer } from './src/navigations/MyDrawer';
 import { MainDrawerNavigation } from './src/navigations/MainDrawerNavigation';
+import TrainingResource from './src/screens/TrainingResource';
 
 export default function App() {
   return (
-    // <NativeBaseProvider>
-    //   <SignUp />
-    // </NativeBaseProvider>
+
     <NativeBaseProvider>
-      <NavigationContainer>
-        {/* <MainDrawerNavigation /> */}
-        <MyDrawer />
-      </NavigationContainer>
-      <StatusBar style="auto" />
+      <View style={styles.container}>
+        <TrainingResource />
+      </View>
     </NativeBaseProvider>
+    //  <NativeBaseProvider>
+    //    <NavigationContainer>
+    //      {/* <MainDrawerNavigation /> */}
+    //      <MyDrawer />
+    //    </NavigationContainer>
+    //    <StatusBar style="auto" />
+    //  </NativeBaseProvider>
+
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#FBFCFF',
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    flex: 1
+    backgroundColor: '#FBFCFF',
+
   },
 });
