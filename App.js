@@ -12,18 +12,13 @@ import TrainingResource from './src/screens/TrainingResource';
 export default function App() {
   return (
 
-    <NativeBaseProvider>
-      <View style={styles.container}>
-        <TrainingResource />
-      </View>
-    </NativeBaseProvider>
-    //  <NativeBaseProvider>
-    //    <NavigationContainer>
-    //      {/* <MainDrawerNavigation /> */}
-    //      <MyDrawer />
-    //    </NavigationContainer>
-    //    <StatusBar style="auto" />
-    //  </NativeBaseProvider>
+     <NativeBaseProvider>
+       <NavigationContainer>
+         {/* <MainDrawerNavigation /> */}
+         <MyDrawer />
+       </NavigationContainer>
+       <StatusBar style="auto" />
+     </NativeBaseProvider>
 
   )
 }
