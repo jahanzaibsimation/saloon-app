@@ -1,40 +1,41 @@
-import React, { useState } from "react";
-import { View, Text, Button, TouchableOpacity } from "react-native";
-import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import AntDesign from "react-native-vector-icons/AntDesign";
+import React, { useState } from 'react';
+import { View, Text, Button, TouchableOpacity } from 'react-native';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
   DrawerItemList,
   DrawerItem,
-} from "@react-navigation/drawer";
-import { blue } from "../utils/Color";
-import { drawerItemsMain } from "./drawerItemsMain";
-import { drawerData } from "../../dummyData/drawer";
-import { Divider, Image } from "native-base";
+} from '@react-navigation/drawer';
+import { blue } from '../utils/Color';
+import { drawerItemsMain } from './drawerItemsMain';
+import { drawerData } from '../../dummyData/drawer';
+import { Divider, Image } from 'native-base';
+import { drawerData2 } from '../../dummyData/drawer2';
 
 function Feed({ navigation }) {
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Feed Screen</Text>
-      <Button title="Open drawer" onPress={() => navigation.openDrawer()} />
-      <Button title="Toggle drawer" onPress={() => navigation.toggleDrawer()} />
+      <Button title='Open drawer' onPress={() => navigation.openDrawer()} />
+      <Button title='Toggle drawer' onPress={() => navigation.toggleDrawer()} />
     </View>
   );
 }
 
 function Notifications() {
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Notifications Screen</Text>
     </View>
   );
 }
 
 function CustomIcons({ name, size, color, service, width }) {
-  if (service === "FontAwesome5") {
+  if (service === 'FontAwesome5') {
     return (
       <FontAwesome5
         style={{ width: width }}
@@ -43,7 +44,7 @@ function CustomIcons({ name, size, color, service, width }) {
         color={color}
       />
     );
-  } else if (service === "AntDesign") {
+  } else if (service === 'AntDesign') {
     return (
       <AntDesign
         style={{ width: width }}
@@ -52,7 +53,7 @@ function CustomIcons({ name, size, color, service, width }) {
         color={color}
       />
     );
-  } else if (service === "FontAwesome") {
+  } else if (service === 'FontAwesome') {
     return (
       <FontAwesome5
         style={{ width: width }}
@@ -61,7 +62,7 @@ function CustomIcons({ name, size, color, service, width }) {
         color={color}
       />
     );
-  } else if (service === "MaterialCommunityIcons") {
+  } else if (service === 'MaterialCommunityIcons') {
     return (
       <MaterialCommunityIcons
         style={{ width: width }}
@@ -78,23 +79,20 @@ function CustomDrawerContent(props) {
   const [isNested, setIsNested] = useState(false);
   const NestDrawerItem = (name) => {
     // setIsNested(!isNested)
-    if (name === "Annoucements") {
-      console.log("Name: " + name);
+    if (name === 'Annoucements') {
+      console.log('Name: ' + name);
       return (
         <DrawerItem
           label={({ focus, color }) => (
             <Text style={{ color: blue }}>Home 1</Text>
           )}
           // onPress={() => props.navigation.navigate('Feed')}
-          onPress={() => props.navigation.navigate("New Drawer")}
+          onPress={() => props.navigation.navigate('New Drawer')}
         />
       );
     }
   };
 
-
-
- 
   /*const customData = [
     {
       id: 0,
@@ -146,46 +144,45 @@ function CustomDrawerContent(props) {
       <>
         <View
           style={{
-            flexDirection: "row",
-            justifyContent: "space-around",
+            flexDirection: 'row',
+            justifyContent: 'space-around',
           }}
         >
-          <Text style={{ fontSize: 17, fontWeight: "bold", color: blue }}>
+          <Text style={{ fontSize: 17, fontWeight: 'bold', color: blue }}>
             {name}
           </Text>
-             <TouchableOpacity onPress={() => setIsOpened(!isOpened)}>
-          <AntDesign
-            style={{ marginTop: 5 }}
-            name={!isOpened ? "right"  : "down"}
-            size={15}
-            color={blue}
-          /></TouchableOpacity>
+          <TouchableOpacity onPress={() => setIsOpened(!isOpened)}>
+            <AntDesign
+              style={{ marginTop: 5 }}
+              name={!isOpened ? 'right' : 'down'}
+              size={15}
+              color={blue}
+            />
+          </TouchableOpacity>
         </View>
         {isOpened && subMenuView}
       </>
     );
   };
 
-
   const menu = [];
-  drawerData.forEach((element) => {
+  drawerData2.forEach((element) => {
     menu.push(<ExpandableMenu key={element.id} {...element}></ExpandableMenu>);
   });
-
 
   return <View style={{ paddingVertical: 100 }}>{menu}</View>;
 
   console.log(JSON.stringify(drawerData));
   return (
     <DrawerContentScrollView {...props}>
-      <View style={{ alignItems: "center", backgroundColor: blue }}>
+      <View style={{ alignItems: 'center', backgroundColor: blue }}>
         <Image
           height={100}
           width={250}
-          resizeMode="contain"
-          alt="salonsymphony"
-          resizeMethod="auto"
-          source={require("./../../assets/logos/SS-Teal-Full-White-Logo.png")}
+          resizeMode='contain'
+          alt='salonsymphony'
+          resizeMethod='auto'
+          source={require('./../../assets/logos/SS-Teal-Full-White-Logo.png')}
         />
       </View>
 
@@ -193,7 +190,7 @@ function CustomDrawerContent(props) {
         {drawerData.map((val) => (
           <View key={val.id}>
             <DrawerItem
-              style={{ flexDirection: "column" }}
+              style={{ flexDirection: 'column' }}
               icon={({ color, size, focus }) => (
                 <CustomIcons
                   width={20}
@@ -206,18 +203,18 @@ function CustomDrawerContent(props) {
               label={({ focus, color }) => (
                 <View
                   style={{
-                    flexDirection: "row",
-                    justifyContent: "space-around",
+                    flexDirection: 'row',
+                    justifyContent: 'space-around',
                   }}
                 >
                   <Text
-                    style={{ fontSize: 17, fontWeight: "bold", color: blue }}
+                    style={{ fontSize: 17, fontWeight: 'bold', color: blue }}
                   >
                     {val.name}
                   </Text>
                   <AntDesign
                     style={{ marginTop: 5 }}
-                    name="right"
+                    name='right'
                     size={15}
                     color={blue}
                   />
@@ -240,7 +237,7 @@ function CustomDrawerContent(props) {
           <>
             <DrawerItem
               icon={({ color, size, focus }) => (
-                <Icon name="ios-person" size={30} color="#4F8EF7" />
+                <Icon name='ios-person' size={30} color='#4F8EF7' />
               )}
               label={({ focus, color }) => (
                 <Text style={{ color: blue }}>Home 1</Text>
@@ -250,7 +247,7 @@ function CustomDrawerContent(props) {
             />
             <DrawerItem
               icon={({ color, size, focus }) => (
-                <Icon name="ios-person" size={30} color="#4F8EF7" />
+                <Icon name='ios-person' size={30} color='#4F8EF7' />
               )}
               label={({ focus, color }) => (
                 <Text style={{ color }}>Home 2</Text>
@@ -267,7 +264,7 @@ function CustomDrawerContent(props) {
 
 const Drawer = createDrawerNavigator();
 
-export function MyDrawer() {
+export function MyDrawer2() {
   const [isNested, setIsNested] = useState(false);
   const NestDrawerItem = () => {
     setIsNested(!isNested);
@@ -278,7 +275,7 @@ export function MyDrawer() {
 
       defaultScreenOptions={{
         drawerLabelStyle: {
-          color: "yellow",
+          color: 'yellow',
         },
       }}
       useLegacyImplementation
@@ -293,7 +290,7 @@ export function MyDrawer() {
       drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
       <Drawer.Screen
-        name="Screen1"
+        name='Screen1'
         component={Notifications}
         options={{
           drawerLabel: () => null,
@@ -302,7 +299,7 @@ export function MyDrawer() {
         }}
       />
       <Drawer.Screen
-        name="Screen2"
+        name='Screen2'
         component={Notifications}
         options={{
           drawerLabel: () => null,
@@ -311,7 +308,7 @@ export function MyDrawer() {
         }}
       />
       <Drawer.Screen
-        name="Screen3"
+        name='Screen3'
         component={Notifications}
         options={{
           drawerLabel: () => null,
@@ -322,5 +319,3 @@ export function MyDrawer() {
     </Drawer.Navigator>
   );
 }
-
-
