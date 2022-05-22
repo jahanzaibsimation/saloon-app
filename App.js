@@ -5,25 +5,27 @@ import { Login } from './src/screens/Login';
 import React from 'react';
 import SignUp from './src/screens/SignUp';
 import { NavigationContainer } from '@react-navigation/native';
-import { MyDrawer } from './src/navigations/MyDrawer';
+import { MyDrawer } from './src/navigations/DrawerNavigator/MyDrawer';
 import { MainDrawerNavigation } from './src/navigations/MainDrawerNavigation';
 import TrainingResource from './src/screens/TrainingResource';
 import { MyDrawer2 } from './src/navigations/MyDrawer2';
+import StackNavigator from './src/navigations/StackNavigator/StackNavigator';
 
 export default function App() {
   return (
+    // <NativeBaseProvider>
+    //   <View style={styles.container}>
+    //     <TrainingResource />
+    //   </View>
+    // </NativeBaseProvider>
     <NativeBaseProvider>
-      <View style={styles.container}>
-        <MyDrawer2 />
-      </View>
+      <NavigationContainer>
+        <StackNavigator />
+        {/* <MainDrawerNavigation /> */}
+        {/* <MyDrawer /> */}
+      </NavigationContainer>
+      <StatusBar style='auto' />
     </NativeBaseProvider>
-    //  <NativeBaseProvider>
-    //    <NavigationContainer>
-    //      {/* <MainDrawerNavigation /> */}
-    //      <MyDrawer />
-    //    </NavigationContainer>
-    //    <StatusBar style="auto" />
-    //  </NativeBaseProvider>
   );
 }
 

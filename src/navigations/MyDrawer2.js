@@ -172,94 +172,94 @@ function CustomDrawerContent(props) {
 
   return <View style={{ paddingVertical: 100 }}>{menu}</View>;
 
-  console.log(JSON.stringify(drawerData));
-  return (
-    <DrawerContentScrollView {...props}>
-      <View style={{ alignItems: 'center', backgroundColor: blue }}>
-        <Image
-          height={100}
-          width={250}
-          resizeMode='contain'
-          alt='salonsymphony'
-          resizeMethod='auto'
-          source={require('./../../assets/logos/SS-Teal-Full-White-Logo.png')}
-        />
-      </View>
+  console.log(JSON.stringify(drawerData2));
+  // return (
+  //   <DrawerContentScrollView {...props}>
+  //     <View style={{ alignItems: 'center', backgroundColor: blue }}>
+  //       <Image
+  //         height={100}
+  //         width={250}
+  //         resizeMode='contain'
+  //         alt='salonsymphony'
+  //         resizeMethod='auto'
+  //         source={require('./../../assets/logos/SS-Teal-Full-White-Logo.png')}
+  //       />
+  //     </View>
 
-      <View style={{ flex: 1 }}>
-        {drawerData.map((val) => (
-          <View key={val.id}>
-            <DrawerItem
-              style={{ flexDirection: 'column' }}
-              icon={({ color, size, focus }) => (
-                <CustomIcons
-                  width={20}
-                  name={val.icon.name}
-                  color={blue}
-                  service={val.icon.service}
-                  size={17}
-                />
-              )}
-              label={({ focus, color }) => (
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-around',
-                  }}
-                >
-                  <Text
-                    style={{ fontSize: 17, fontWeight: 'bold', color: blue }}
-                  >
-                    {val.name}
-                  </Text>
-                  <AntDesign
-                    style={{ marginTop: 5 }}
-                    name='right'
-                    size={15}
-                    color={blue}
-                  />
-                </View>
-              )}
-              onPress={() => NestDrawerItem(val.name)}
-            />
-            <Divider />
-            {/* <View style={{ marginLeft: 62 }}>
-                            <DrawerItem
-                                label={({ focus, color }) => <Text style={{ color: blue }}>Home 1</Text>}
-                                // onPress={() => props.navigation.navigate('Feed')}
-                                onPress={() => props.navigation.navigate(<Feed />)}
-                            />
-                        </View> */}
-          </View>
-        ))}
+  //     <View style={{ flex: 1 }}>
+  //       {drawerData2.map((val) => (
+  //         <View key={val.id}>
+  //           <DrawerItem
+  //             style={{ flexDirection: 'column' }}
+  //             icon={({ color, size, focus }) => (
+  //               <CustomIcons
+  //                 width={20}
+  //                 name={val.icon.name}
+  //                 color={blue}
+  //                 service={val.icon.service}
+  //                 size={17}
+  //               />
+  //             )}
+  //             label={({ focus, color }) => (
+  //               <View
+  //                 style={{
+  //                   flexDirection: 'row',
+  //                   justifyContent: 'space-around',
+  //                 }}
+  //               >
+  //                 <Text
+  //                   style={{ fontSize: 17, fontWeight: 'bold', color: blue }}
+  //                 >
+  //                   {val.name}
+  //                 </Text>
+  //                 <AntDesign
+  //                   style={{ marginTop: 5 }}
+  //                   name='right'
+  //                   size={15}
+  //                   color={blue}
+  //                 />
+  //               </View>
+  //             )}
+  //             onPress={() => NestDrawerItem(val.name)}
+  //           />
+  //           <Divider />
+  //           {/* <View style={{ marginLeft: 62 }}>
+  //                           <DrawerItem
+  //                               label={({ focus, color }) => <Text style={{ color: blue }}>Home 1</Text>}
+  //                               // onPress={() => props.navigation.navigate('Feed')}
+  //                               onPress={() => props.navigation.navigate(<Feed />)}
+  //                           />
+  //                       </View> */}
+  //         </View>
+  //       ))}
 
-        {isNested && (
-          <>
-            <DrawerItem
-              icon={({ color, size, focus }) => (
-                <Icon name='ios-person' size={30} color='#4F8EF7' />
-              )}
-              label={({ focus, color }) => (
-                <Text style={{ color: blue }}>Home 1</Text>
-              )}
-              // onPress={() => props.navigation.navigate('Feed')}
-              onPress={() => props.navigation.navigate(<Feed />)}
-            />
-            <DrawerItem
-              icon={({ color, size, focus }) => (
-                <Icon name='ios-person' size={30} color='#4F8EF7' />
-              )}
-              label={({ focus, color }) => (
-                <Text style={{ color }}>Home 2</Text>
-              )}
-              onPress={() => <Notifications />}
-            />
-          </>
-        )}
-        <DrawerItemList {...props} />
-      </View>
-    </DrawerContentScrollView>
-  );
+  //       {isNested && (
+  //         <>
+  //           <DrawerItem
+  //             icon={({ color, size, focus }) => (
+  //               <Icon name='ios-person' size={30} color='#4F8EF7' />
+  //             )}
+  //             label={({ focus, color }) => (
+  //               <Text style={{ color: blue }}>Home 1</Text>
+  //             )}
+  //             // onPress={() => props.navigation.navigate('Feed')}
+  //             onPress={() => props.navigation.navigate(<Feed />)}
+  //           />
+  //           <DrawerItem
+  //             icon={({ color, size, focus }) => (
+  //               <Icon name='ios-person' size={30} color='#4F8EF7' />
+  //             )}
+  //             label={({ focus, color }) => (
+  //               <Text style={{ color }}>Home 2</Text>
+  //             )}
+  //             onPress={() => <Notifications />}
+  //           />
+  //         </>
+  //       )}
+  //       <DrawerItemList {...props} />
+  //     </View>
+  //   </DrawerContentScrollView>
+  // );
 }
 
 const Drawer = createDrawerNavigator();
@@ -271,8 +271,7 @@ export function MyDrawer2() {
   };
   return (
     <Drawer.Navigator
-      // initialRouteName="Home"
-
+      // initialRouteName='Screen1'
       defaultScreenOptions={{
         drawerLabelStyle: {
           color: 'yellow',

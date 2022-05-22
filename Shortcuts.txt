@@ -5,5 +5,3 @@ rnfes => React Native Functional Components with styles
 
 yarn start -c => clear cache
 
-
-install this npm install react-native-safe-area-context

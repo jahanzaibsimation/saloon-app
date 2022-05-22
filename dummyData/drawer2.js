@@ -2,7 +2,7 @@ export const drawerData2 = [
   {
     id: 1,
     name: 'Annoucements',
-    icon: { name: 'bell', service: 'FontAwesome5' },
+    icon: { name: 'bell', service: 'MaterialCommunityIcons' },
     subMenu: [
       {
         id: 1,
@@ -38,16 +38,16 @@ export const drawerData2 = [
     name: 'Engagement',
     icon: { name: 'like1', service: 'AntDesign' },
     subMenu: [
-      {
-        id: 1,
-        name: 'Screen1',
-        icon: { name: 'bell', service: 'FontAwesome5' },
-      },
-      {
-        id: 2,
-        name: 'Screen2',
-        icon: { name: 'bell', service: 'FontAwesome5' },
-      },
+      // {
+      //   id: 1,
+      //   name: 'Screen1',
+      //   icon: { name: 'bell', service: 'FontAwesome5' },
+      // },
+      // {
+      //   id: 2,
+      //   name: 'Screen2',
+      //   icon: { name: 'bell', service: 'FontAwesome5' },
+      // },
     ],
   },
   {
@@ -55,16 +55,16 @@ export const drawerData2 = [
     name: 'Development',
     icon: { name: 'graduation-cap', service: 'FontAwesome' },
     subMenu: [
-      {
-        id: 1,
-        name: 'Screen1',
-        icon: { name: 'bell', service: 'FontAwesome5' },
-      },
-      {
-        id: 2,
-        name: 'Screen2',
-        icon: { name: 'bell', service: 'FontAwesome5' },
-      },
+      // {
+      //   id: 1,
+      //   name: 'Screen1',
+      //   icon: { name: 'bell', service: 'FontAwesome5' },
+      // },
+      // {
+      //   id: 2,
+      //   name: 'Screen2',
+      //   icon: { name: 'bell', service: 'FontAwesome5' },
+      // },
     ],
   },
   {
@@ -72,16 +72,16 @@ export const drawerData2 = [
     name: 'Onboarding',
     icon: { name: 'text-box-check', service: 'MaterialCommunityIcons' },
     subMenu: [
-      {
-        id: 1,
-        name: 'Screen1',
-        icon: { name: 'bell', service: 'FontAwesome5' },
-      },
-      {
-        id: 2,
-        name: 'Screen2',
-        icon: { name: 'bell', service: 'FontAwesome5' },
-      },
+      // {
+      //   id: 1,
+      //   name: 'Screen1',
+      //   icon: { name: 'bell', service: 'FontAwesome5' },
+      // },
+      // {
+      //   id: 2,
+      //   name: 'Screen2',
+      //   icon: { name: 'bell', service: 'FontAwesome5' },
+      // },
     ],
   },
   {
@@ -89,16 +89,16 @@ export const drawerData2 = [
     name: 'Employees',
     icon: { name: 'user-cog', service: 'FontAwesome5' },
     subMenu: [
-      {
-        id: 1,
-        name: 'Screen1',
-        icon: { name: 'bell', service: 'FontAwesome5' },
-      },
-      {
-        id: 2,
-        name: 'Screen2',
-        icon: { name: 'bell', service: 'FontAwesome5' },
-      },
+      // {
+      //   id: 1,
+      //   name: 'Screen1',
+      //   icon: { name: 'bell', service: 'FontAwesome5' },
+      // },
+      // {
+      //   id: 2,
+      //   name: 'Screen2',
+      //   icon: { name: 'bell', service: 'FontAwesome5' },
+      // },
     ],
   },
   {
@@ -106,16 +106,16 @@ export const drawerData2 = [
     name: 'Resources',
     icon: { name: 'paperclip', service: 'FontAwesome5' },
     subMenu: [
-      {
-        id: 1,
-        name: 'Screen1',
-        icon: { name: 'bell', service: 'FontAwesome5' },
-      },
-      {
-        id: 2,
-        name: 'Screen2',
-        icon: { name: 'bell', service: 'FontAwesome5' },
-      },
+      // {
+      //   id: 1,
+      //   name: 'Screen1',
+      //   icon: { name: 'bell', service: 'FontAwesome5' },
+      // },
+      // {
+      //   id: 2,
+      //   name: 'Screen2',
+      //   icon: { name: 'bell', service: 'FontAwesome5' },
+      // },
     ],
   },
 ];
