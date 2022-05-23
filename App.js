@@ -10,22 +10,24 @@ import { MainDrawerNavigation } from './src/navigations/MainDrawerNavigation';
 import TrainingResource from './src/screens/TrainingResource';
 import { MyDrawer2 } from './src/navigations/MyDrawer2';
 import StackNavigator from './src/navigations/StackNavigator/StackNavigator';
+import PdfViewer from './src/components/PdfViewer';
 
 export default function App() {
   return (
-    // <NativeBaseProvider>
-    //   <View style={styles.container}>
-    //     <TrainingResource />
-    //   </View>
-    // </NativeBaseProvider>
     <NativeBaseProvider>
-      <NavigationContainer>
-        <StackNavigator />
-        {/* <MainDrawerNavigation /> */}
-        {/* <MyDrawer /> */}
-      </NavigationContainer>
-      <StatusBar style='auto' />
+      <View style={styles.container}>
+        <TrainingResource />
+        {/* <PdfViewer /> */}
+      </View>
     </NativeBaseProvider>
+    // <NativeBaseProvider>
+    //   <NavigationContainer>
+    //     <StackNavigator />
+    //     {/* <MainDrawerNavigation /> */}
+    //     {/* <MyDrawer /> */}
+    //   </NavigationContainer>
+    //   <StatusBar style='auto' />
+    // </NativeBaseProvider>
   );
 }
 

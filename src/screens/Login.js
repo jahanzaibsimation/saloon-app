@@ -8,7 +8,7 @@ import {
   Input,
   Link,
   Text,
-  
+
   VStack,
 } from 'native-base';
 import { View, Image, ImageBackground, TouchableOpacity } from "react-native";
@@ -66,8 +66,10 @@ export const Login = ({ navigation }) => {
                 <Input size="md" type="password" />
 
                 <TouchableOpacity>
-                  <Text style={{  color: "#090C4E" 
-                  , fontWeight: "600",textAlign:"right",marginTop:10 }}>Forget Password?</Text>
+                  <Text style={{
+                    color: "#090C4E"
+                    , fontWeight: "600", textAlign: "right", marginTop: 10
+                  }}>Forget Password?</Text>
                 </TouchableOpacity>
               </FormControl>
 
@@ -81,7 +83,7 @@ export const Login = ({ navigation }) => {
                     justifyContent: "center",
                     alignItems: "center",
                   }}
-                  //onPress={() => navigation.navigate("Welcome")}
+                  onPress={() => navigation.navigate("Drawer")}
                 >
                   <Text
                     style={{
