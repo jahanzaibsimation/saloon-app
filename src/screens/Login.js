@@ -8,92 +8,119 @@ import {
   Input,
   Link,
   Text,
+  
   VStack,
 } from 'native-base';
-import { Image } from 'react-native';
+import { View, Image, ImageBackground, TouchableOpacity } from "react-native";
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { blue } from '../utils/Color';
 
 export const Login = ({ navigation }) => {
   return (
-    <Center w='100%'>
-      <Box safeArea w='90%' maxW='290'>
-        <Image
-          resizeMode='contain'
-          style={{ width: 300 }}
-          source={require('../../assets/logos/Full-Logo-Midnight-Blue.png')}
-        />
-        <Heading
-          size='lg'
-          fontWeight='600'
-          color='coolGray.800'
-          _dark={{
-            color: 'warmGray.50',
-          }}
-        >
-          Welcome
-        </Heading>
-        <Heading
-          mt='1'
-          _dark={{
-            color: 'warmGray.200',
-          }}
-          color='coolGray.600'
-          fontWeight='medium'
-          size='xs'
-        >
-          Sign in to continue!
-        </Heading>
-
-        <VStack space={3} mt='5'>
-          <FormControl>
-            <FormControl.Label>Email ID</FormControl.Label>
-            <Input size='md' />
-          </FormControl>
-          <FormControl>
-            <FormControl.Label>Password</FormControl.Label>
-            <Input size='md' type='password' />
-            <Link
-              _text={{
-                fontSize: 'xs',
-                fontWeight: '500',
-                color: 'indigo.500',
-              }}
-              alignSelf='flex-end'
-              mt='1'
-            >
-              Forget Password?
-            </Link>
-          </FormControl>
-          <Button
-            backgroundColor={blue}
-            mt='2'
-            onPress={() => navigation.navigate('Drawer')}
-          >
-            Sign in
-          </Button>
-          <HStack mt='6' justifyContent='center'>
-            <Text
-              fontSize='sm'
-              color='coolGray.600'
+    <ImageBackground
+      resizeMode="cover"
+      style={{ height: "100%", width: "100%", backgroundColor: "white" }}
+      source={require("../../assets/images/saloon.jpg")}
+      blurRadius={1}
+      imageStyle={{ opacity: 0.1 }}
+    >
+      <Center w="100%">
+        <Box safeArea w="90%" maxW="290">
+          <Image
+            resizeMode="contain"
+            source={require("../../assets/logos/Full-Logo-Midnight-Blue.png")}
+            style={{ width: "100%", height: 70, marginVertical: 50 }}
+          />
+          <View >
+            <Heading
+              size="lg"
+              fontWeight="600"
+              color="coolGray.800"
               _dark={{
-                color: 'warmGray.200',
+                color: "warmGray.50",
               }}
+              style={{ textAlign: "center" }}
             >
-              I'm a new user.{' '}
-            </Text>
-            <Link
-              _text={{
-                color: 'indigo.500',
-                fontWeight: 'medium',
-                fontSize: 'sm',
+              Welcome
+            </Heading>
+            <Heading
+              mt="1"
+              _dark={{
+                color: "warmGray.200",
               }}
-              href='#'
+              color="coolGray.600"
+              fontWeight="medium"
+              size="xs"
+              style={{ textAlign: "center" }}
             >
-              Sign Up
-            </Link>
-          </HStack>
-        </VStack>
-      </Box>
-    </Center>
+              Sign in to continue!
+            </Heading>
+
+            <VStack space={3} mt="5">
+              <FormControl>
+                <FormControl.Label>Email ID</FormControl.Label>
+                <Input size="md" />
+              </FormControl>
+              <FormControl>
+                <FormControl.Label>Password</FormControl.Label>
+                <Input size="md" type="password" />
+
+                <TouchableOpacity>
+                  <Text style={{  color: "#090C4E" 
+                  , fontWeight: "600",textAlign:"right",marginTop:10 }}>Forget Password?</Text>
+                </TouchableOpacity>
+              </FormControl>
+
+              <HStack mt="1" justifyContent="center">
+                <TouchableOpacity
+                  style={{
+                    backgroundColor: "#090C4E",
+                    width: "100%",
+                    paddingVertical: 15,
+                    borderRadius: 20,
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                  //onPress={() => navigation.navigate("Welcome")}
+                >
+                  <Text
+                    style={{
+                      color: "#F2F2F2",
+                      fontSize: 17,
+                      fontWeight: "600",
+                    }}
+                  >
+                    Sign In
+                  </Text>
+                </TouchableOpacity>
+              </HStack>
+              <HStack mt="1" justifyContent="center">
+                <TouchableOpacity
+                  style={{
+                    backgroundColor: "#090C4E",
+                    width: "100%",
+                    paddingVertical: 15,
+                    borderRadius: 20,
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                  onPress={() => navigation.navigate("Signup")}
+                >
+                  <Text
+                    style={{
+                      color: "#F2F2F2",
+                      fontSize: 17,
+                      fontWeight: "600",
+                    }}
+                  >
+                    Sign Up
+                  </Text>
+                </TouchableOpacity>
+              </HStack>
+            </VStack>
+          </View>
+        </Box>
+      </Center>
+    </ImageBackground>
   );
 };
