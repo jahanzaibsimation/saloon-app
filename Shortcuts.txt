@@ -5,3 +5,4 @@ rnfes => React Native Functional Components with styles
 
 yarn start -c => clear cache
 
+npm i react-native-webview@"^10.9.1"

@@ -1,0 +1,107 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\AC\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add React-Native-Signature-Capture-View
+
+PATH: 
+  C:\Users\AC\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\AC\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Users\AC\AppData\Local\Android\Sdk\platform-tools;C:\Users\AC\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\AC\AppData\Local\Microsoft\WindowsApps;C:\Users\AC\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\AC\AppData\Roaming\npm;C:\Users\AC\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  16.15.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/React-Native-Signature-Capture-View: Not found
+      at Request.params.callback [as _callback] (C:\Users\AC\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66138:18)
+      at Request.self.callback (C:\Users\AC\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140883:22)
+      at Request.emit (node:events:527:28)
+      at Request.<anonymous> (C:\Users\AC\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141855:10)
+      at Request.emit (node:events:527:28)
+      at IncomingMessage.<anonymous> (C:\Users\AC\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141777:12)
+      at Object.onceWrapper (node:events:641:28)
+      at IncomingMessage.emit (node:events:539:35)
+      at endReadableNT (node:internal/streams/readable:1345:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+npm manifest: 
+  {
+    "name": "saloon-app",
+    "version": "1.0.0",
+    "main": "node_modules/expo/AppEntry.js",
+    "scripts": {
+      "start": "expo start",
+      "android": "expo start --android",
+      "ios": "expo start --ios",
+      "web": "expo start --web",
+      "eject": "expo eject"
+    },
+    "dependencies": {
+      "@expo/vector-icons": "^13.0.0",
+      "@react-native-community/datetimepicker": "6.1.2",
+      "@react-native-community/picker": "^1.8.1",
+      "@react-native-masked-view/masked-view": "^0.2.6",
+      "@react-native-picker/picker": "2.4.0",
+      "@react-navigation/bottom-tabs": "^6.3.1",
+      "@react-navigation/drawer": "^6.4.1",
+      "@react-navigation/material-bottom-tabs": "^6.2.1",
+      "@react-navigation/material-top-tabs": "^6.2.1",
+      "@react-navigation/native": "^6.0.10",
+      "@react-navigation/native-stack": "^6.6.2",
+      "@react-navigation/stack": "^6.2.1",
+      "@rneui/base": "^0.0.0-edge.2",
+      "@rneui/themed": "^0.0.0-edge.2",
+      "@stripe/stripe-react-native": "0.6.0",
+      "axios": "^0.27.2",
+      "country-state-city": "^3.0.1",
+      "expo": "~45.0.0",
+      "expo-constants": "^13.1.1",
+      "expo-image-picker": "~13.1.1",
+      "expo-notifications": "~0.15.2",
+      "expo-status-bar": "~1.3.0",
+      "firebase": "^9.8.1",
+      "formik": "^2.2.9",
+      "lottie-react-native": "5.0.1",
+      "moment": "^2.29.3",
+      "native-base": "^3.4.5",
+      "react": "17.0.2",
+      "react-dom": "17.0.2",
+      "react-native": "0.68.2",
+      "react-native-country-picker-modal": "^2.0.0",
+      "react-native-echarts-wrapper": "^2.0.0",
+      "react-native-gesture-handler": "~2.2.1",
+      "react-native-modal-datetime-picker": "^13.1.2",
+      "react-native-pager-view": "5.4.15",
+      "react-native-paper": "^4.12.1",
+      "react-native-phone-input": "^1.3.4",
+      "react-native-picker": "^4.3.7",
+      "react-native-picker-modal-view": "^1.3.2",
+      "react-native-reanimated": "~2.8.0",
+      "react-native-safe-area-context": "4.2.4",
+      "react-native-screens": "~3.11.1",
+      "react-native-svg": "12.3.0",
+      "react-native-tab-view": "^3.1.1",
+      "react-native-vector-icons": "^9.1.0",
+      "react-native-web": "0.17.7",
+      "react-native-webview": "11.18.1",
+      "react-query": "^3.39.0",
+      "react-redux": "^8.0.1",
+      "react-select": "^5.3.2",
+      "react-select-country-list": "^2.2.3",
+      "react-signature-canvas": "^1.0.5",
+      "redux": "^4.2.0"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.12.9",
+      "@redux-devtools/core": "^3.12.0"
+    },
+    "private": true
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
