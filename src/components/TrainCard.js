@@ -9,15 +9,11 @@ const TagsTrainRes = ({ tags }) => {
     tags.forEach((element, i) => {
 
         arr.push(
-            <View key={element.id}>
-
+            <View style={{ flexDirection: 'row' }} key={element.id}>
                 <Text fontSize="sm" >
                     {element.name}
-
                     <Text fontSize='4xl' color={blue} fontWeight="500">. </Text>
-
                 </Text>
-
 
             </View>
         )
