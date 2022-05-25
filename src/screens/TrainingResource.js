@@ -9,9 +9,8 @@ import { blue } from '../utils/Color'
 const TrainingResource = () => {
     return (
 
-
-        <View>
-            <Stack direction="column" mb="2.5" mt="1.5" space={3}>
+        <View style={{ marginTop: '30%' }}>
+            <Stack direction="column" m="2.5" mt="1.5" space={3}>
                 <Stack direction='row' >
                     <Text fontSize='lg'>Development </Text>
                     <AntDesign style={{ marginTop: 10, marginRight: 10 }} name='doubleright' size={10} />
@@ -31,7 +30,13 @@ const TrainingResource = () => {
                 <Stack mt="2.5" direction='row' >
                     <Heading fontSize='xl' color={blue}>Upload Training Resources</Heading>
                 </Stack>
-                <TrainCard />
+                {console.log(trainingResources)}
+                <ScrollView horizontal={true}>
+                    {trainingResources.map(val => (
+                        <TrainCard key={val.id} title={val.title} imgUrl={val.imgUrl} tags={val.tags} id={val.id} />
+                    ))}
+                </ScrollView>
+
 
                 {/* <TrainCard imageLoc={val.imageLoc} id={val.id} tags={val.tags} key={val.id} title={val.title} /> */}
 

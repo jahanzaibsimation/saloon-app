@@ -1,7 +1,7 @@
 export const trainingResources = [
     {
         id: 1,
-        imageLoc: '../../assets/images/products/smooth-infusion.jpeg',
+        imgUrl: 'https://res.cloudinary.com/dk8gytkuo/image/upload/v1653510677/saloonapp/smooth-infusion_erryv7.jpg',
         title: 'Smooth Infusion',
         tags: [
             {
@@ -20,8 +20,8 @@ export const trainingResources = [
     },
     {
         id: 2,
-        imageLoc: '../../assets/images/products/smooth-infusion.jpeg',
-        title: 'Smooth Infusion',
+        imgUrl: 'https://res.cloudinary.com/dk8gytkuo/image/upload/v1653510677/saloonapp/loreal-hair-color_p1lkn6.jpg',
+        title: 'Loreal Hair Color',
         tags: [
             {
                 id: 1,
