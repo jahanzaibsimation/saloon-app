@@ -14,20 +14,20 @@ import PdfViewer from './src/components/PdfViewer';
 
 export default function App() {
   return (
-    <NativeBaseProvider>
-      <View style={styles.container}>
-        <TrainingResource />
-        {/* <PdfViewer /> */}
-      </View>
-    </NativeBaseProvider>
     // <NativeBaseProvider>
-    //   <NavigationContainer>
-    //     <StackNavigator />
-    //     {/* <MainDrawerNavigation /> */}
-    //     {/* <MyDrawer /> */}
-    //   </NavigationContainer>
-    //   <StatusBar style='auto' />
+    //   <View style={styles.container}>
+    //     <TrainingResource />
+    //     {/* <PdfViewer /> */}
+    //   </View>
     // </NativeBaseProvider>
+    <NativeBaseProvider>
+      <NavigationContainer>
+        {/* <StackNavigator /> */}
+        {/* <MainDrawerNavigation /> */}
+        <MyDrawer />
+      </NavigationContainer>
+      <StatusBar style='auto' />
+    </NativeBaseProvider>
   );
 }
 

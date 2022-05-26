@@ -14,18 +14,14 @@ export const drawerData2 = [
         name: 'Send Push Notification',
         icon: { name: 'bell', service: 'FontAwesome5' },
       },
+
       {
         id: 3,
-        name: 'Send Push Notification',
+        name: 'Add Upcoming Event',
         icon: { name: 'bell', service: 'FontAwesome5' },
       },
       {
         id: 4,
-        name: ' Add Upcoming Event',
-        icon: { name: 'bell', service: 'FontAwesome5' },
-      },
-      {
-        id: 5,
         name: 'Create New Shoutout',
         icon: { name: 'bell', service: 'FontAwesome5' },
       },
