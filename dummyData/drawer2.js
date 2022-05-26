@@ -6,12 +6,12 @@ export const drawerData2 = [
     subMenu: [
       {
         id: 1,
-        name: 'Screen1',
+        name: 'Screen0',
         icon: { name: 'bell', service: 'FontAwesome5' },
       },
       {
         id: 2,
-        name: 'Screen2',
+        name: 'Screen1',
         icon: { name: 'bell', service: 'FontAwesome5' },
       },
     ],
@@ -23,7 +23,7 @@ export const drawerData2 = [
     subMenu: [
       {
         id: 1,
-        name: 'Screen1',
+        name: 'Screen2',
         icon: { name: 'bell', service: 'FontAwesome5' },
       },
       {

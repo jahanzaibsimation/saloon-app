@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, Button, TouchableOpacity } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -66,8 +66,8 @@ function CustomIcons({ name, size, color, service, width }) {
 }
 
 function CustomDrawerContent(props) {
-  console.log('THis is the app');
-  const CustomDrawerItem = ({ name }) => {
+  console.log("THis is the app");
+  const CustomDrawerItem = ({ name ,isActive}) => {
     const [isFocused, setIsFocused] = useState(false);
     const handleOnPress = () => {
       setIsFocused(true);
@@ -76,9 +76,13 @@ function CustomDrawerContent(props) {
     return (
       <DrawerItem
         label={({ focused, color }) => (
-          <Text style={{ marginLeft: '30%', color: focused ? blue : 'black' }}>
-            {name}
-          </Text>
+          <View style={{backgroundColor:isActive ?"green" : "white"}}>
+            <Text
+              style={{ marginLeft: "30%", color: isActive ? blue : "black" }}
+            >
+              {name}
+            </Text>
+          </View>
         )}
         // onPress={() => props.navigation.navigate(name)}
         onPress={() => handleOnPress()}
@@ -92,7 +96,7 @@ function CustomDrawerContent(props) {
     return (
       <View
         style={{
-          alignItems: 'center',
+          alignItems: "center",
           backgroundColor: blue,
           paddingTop: 20,
         }}
@@ -100,26 +104,69 @@ function CustomDrawerContent(props) {
         <Image
           height={100}
           width={250}
-          resizeMode='contain'
-          alt='salonsymphony'
-          resizeMethod='auto'
-          source={require('../../../assets/logos/SS-Teal-Full-White-Logo.png')}
+          resizeMode="contain"
+          alt="salonsymphony"
+          resizeMethod="auto"
+          source={require("../../../assets/logos/SS-Teal-Full-White-Logo.png")}
         />
       </View>
     );
   };
 
+
+
+  const getActiveRoute = (state) => {
+    //console.log(state.history);
+    let currentRouteKey = state.history[state.history.length - 1].key;
+    if (currentRouteKey == undefined){
+      currentRouteKey = state.history[state.history.length - 2].key;
+    }
+      if (currentRouteKey && currentRouteKey.length > 0) {
+        const filteredRoutes = state.routes.filter(
+          (route) => route.key == currentRouteKey
+        );
+        if (filteredRoutes && filteredRoutes.length > 0) {
+          const currentRouteName = filteredRoutes[0].name;
+          return currentRouteName;
+        }
+        console.log("Cant find route in route array");
+      }
+     console.log("Cant find route in history");
+  };
+
+  
+
   const ExpandableMenu = ({ name, subMenu, icon }) => {
     const [isOpened, setIsOpened] = useState(false);
+      const activeRoute = getActiveRoute(props.state);
+
+
+useEffect(()=>{
+    subMenu.forEach((element) => {
+      if (activeRoute == element.name) {
+        setIsOpened(true);
+      }
+    });
+},[])
 
     const subMenuView = [];
     subMenu.forEach((element) => {
-      subMenuView.push(<CustomDrawerItem key={element.id} {...element} />);
+      let isActive = false;
+      if(activeRoute == element.name){
+        isActive = true;
+      }
+      subMenuView.push(
+        <CustomDrawerItem
+          isActive={isActive}
+          key={element.id}
+          {...element}
+        />
+      );
     });
     return (
       <>
         <DrawerItem
-          style={{ flexDirection: 'column' }}
+          style={{ flexDirection: "column" }}
           icon={({ color, size, focus }) => (
             <CustomIcons
               width={20}
@@ -132,16 +179,16 @@ function CustomDrawerContent(props) {
           label={({ focus, color }) => (
             <View
               style={{
-                flexDirection: 'row',
-                justifyContent: 'space-around',
+                flexDirection: "row",
+                justifyContent: "space-around",
               }}
             >
-              <Text style={{ fontSize: 17, fontWeight: 'bold', color: blue }}>
+              <Text style={{ fontSize: 17, fontWeight: "bold", color: blue }}>
                 {name}
               </Text>
               <AntDesign
                 style={{ marginTop: 5 }}
-                name={!isOpened ? 'right' : 'down'}
+                name={!isOpened ? "right" : "down"}
                 size={15}
                 color={blue}
               />
@@ -161,7 +208,7 @@ function CustomDrawerContent(props) {
   };
 
   const menu = [];
-  menu.push(<HeaderDrawer key={'firstItem'} />);
+  menu.push(<HeaderDrawer key={"firstItem"} />);
   drawerData2.forEach((element) => {
     menu.push(<ExpandableMenu key={element.id} {...element}></ExpandableMenu>);
   });
@@ -193,7 +240,7 @@ export function MyDrawer() {
       // initialRouteName='Screen1'
       defaultScreenOptions={{
         drawerLabelStyle: {
-          color: 'yellow',
+          color: "yellow",
         },
       }}
       useLegacyImplementation
@@ -209,7 +256,7 @@ export function MyDrawer() {
       drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
       <Drawer.Screen
-        name='New Drawer'
+        name="Screen0"
         component={Notifications}
         options={{
           drawerLabel: () => null,
@@ -219,7 +266,7 @@ export function MyDrawer() {
       />
 
       <Drawer.Screen
-        name='Screen1'
+        name="Screen1"
         component={Notifications}
         options={{
           drawerLabel: () => <Text>Screen 1</Text>,
@@ -228,7 +275,7 @@ export function MyDrawer() {
         }}
       />
       <Drawer.Screen
-        name='Screen2'
+        name="Screen2"
         component={Notifications}
         options={{
           drawerLabel: () => null,
@@ -237,7 +284,7 @@ export function MyDrawer() {
         }}
       />
       <Drawer.Screen
-        name='Screen3'
+        name="Screen3"
         component={Notifications}
         options={{
           drawerLabel: () => null,
