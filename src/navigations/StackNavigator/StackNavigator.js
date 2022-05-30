@@ -12,10 +12,11 @@ import {
 } from 'native-base';
 import { blue } from '../../utils/Color';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Login ,LoginForm} from '../../screens/Login';
+import { Login, LoginForm } from '../../screens/Login';
 import SignUp from '../../screens/SignUp';
 import { MyDrawer } from '../DrawerNavigator/MyDrawer';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { IntroScreen } from '../../screens/IntroScreen';
 
 const MainPage = ({ navigation }) => {
   return (
@@ -63,12 +64,12 @@ const MainPage = ({ navigation }) => {
               width: 200,
               paddingVertical: 15,
               borderRadius: 20,
-              justifyContent:"center",
-              alignItems:"center"
+              justifyContent: "center",
+              alignItems: "center"
             }}
             onPress={() => navigation.navigate("Signup")}
           >
-            <Text style={{ color: "#F2F2F2", fontSize: 17, fontWeight:"600"  }}>Sign Up</Text>
+            <Text style={{ color: "#F2F2F2", fontSize: 17, fontWeight: "600" }}>Sign Up</Text>
           </TouchableOpacity>
         </View>
       </ImageBackground>
@@ -82,7 +83,12 @@ const StackNavigator = () => {
     <StackNav.Navigator>
       <StackNav.Screen
         name="Welcome"
-        options={{ header: () => {} }}
+        options={{ header: () => { } }}
+        component={IntroScreen}
+      />
+      <StackNav.Screen
+        name="Login"
+        options={{ header: () => { } }}
         component={Login}
       />
       <StackNav.Screen

@@ -11,9 +11,11 @@ import {
 
   VStack,
 } from 'native-base';
-import { View, Image, ImageBackground, TouchableOpacity } from "react-native";
+import { View, Image, ImageBackground, TouchableOpacity, Animated } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { blue } from '../utils/Color';
+import * as Animatable from 'react-native-animatable';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
 export const Login = ({ navigation }) => {
   return (
@@ -26,12 +28,15 @@ export const Login = ({ navigation }) => {
     >
       <Center w="100%">
         <Box safeArea w="90%" maxW="290">
-          <Image
+          <Animatable.Image
+            animation='bounceIn'
+            duration={1500}
             resizeMode="contain"
             source={require("../../assets/logos/Full-Logo-Midnight-Blue.png")}
             style={{ width: "100%", height: 70, marginVertical: 50 }}
+
           />
-          <View >
+          <Animatable.View animation='fadeInUpBig' >
             <Heading
               size="lg"
               fontWeight="600"
@@ -60,6 +65,8 @@ export const Login = ({ navigation }) => {
               <FormControl>
                 <FormControl.Label>Email ID</FormControl.Label>
                 <Input size="md" />
+                {/* <MaterialCommunityIcons name='email' style={{ marginRight: 20 }} size={16} /> */}
+
               </FormControl>
               <FormControl>
                 <FormControl.Label>Password</FormControl.Label>
@@ -120,7 +127,7 @@ export const Login = ({ navigation }) => {
                 </TouchableOpacity>
               </HStack>
             </VStack>
-          </View>
+          </Animatable.View>
         </Box>
       </Center>
     </ImageBackground>

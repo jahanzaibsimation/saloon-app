@@ -5,11 +5,12 @@ import { View, ScrollView } from 'react-native'
 import { trainingResources } from '../../dummyData/trainingResources'
 import TrainCard from '../components/TrainCard'
 import { blue } from '../utils/Color'
+import * as Animatable from 'react-native-animatable';
 
 const TrainingResource = () => {
     return (
 
-        <View style={{ marginTop: '30%' }}>
+        <Animatable.View animation='bounceInLeft' style={{ marginTop: '10%' }}>
             <Stack direction="column" m="2.5" mt="1.5" space={3}>
                 <Stack direction='row' >
                     <Text fontSize='lg'>Development </Text>
@@ -31,7 +32,7 @@ const TrainingResource = () => {
                     <Heading fontSize='xl' color={blue}>Upload Training Resources</Heading>
                 </Stack>
                 {console.log(trainingResources)}
-                <ScrollView horizontal={true}>
+                <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}>
                     {trainingResources.map(val => (
                         <TrainCard key={val.id} title={val.title} imgUrl={val.imgUrl} tags={val.tags} id={val.id} />
                     ))}
@@ -41,7 +42,7 @@ const TrainingResource = () => {
                 {/* <TrainCard imageLoc={val.imageLoc} id={val.id} tags={val.tags} key={val.id} title={val.title} /> */}
 
             </Stack>
-        </View>
+        </Animatable.View>
 
     )
 }

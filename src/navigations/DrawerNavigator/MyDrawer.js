@@ -15,6 +15,8 @@ import { drawerItemsMain } from '../drawerItemsMain';
 import { drawerData } from '../../../dummyData/drawer';
 import { Box, Divider, Image } from 'native-base';
 import { drawerData2 } from '../../../dummyData/drawer2';
+import TrainingResource from '../../screens/TrainingResource';
+import UnderConstructionPage from '../../screens/UnderConstructionPage';
 
 function Notifications() {
   return (
@@ -200,7 +202,7 @@ function CustomDrawerContent(props) {
     menu.push(<ExpandableMenu key={element.id} {...element}></ExpandableMenu>);
   });
 
-  return <DrawerContentScrollView {...props}>{menu}</DrawerContentScrollView>;
+  return <DrawerContentScrollView showsVerticalScrollIndicator={false} {...props}>{menu}</DrawerContentScrollView>;
 }
 
 const Drawer = createDrawerNavigator();
@@ -224,7 +226,7 @@ export function MyDrawer() {
   };
   return (
     <Drawer.Navigator
-      // initialRouteName='Screen1'
+      initialRouteName='Training Docs/Files'
       defaultScreenOptions={{
         drawerLabelStyle: {
           color: 'yellow',
@@ -243,19 +245,20 @@ export function MyDrawer() {
       drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
 
+      {/* Annoucements Screens */}
 
       <Drawer.Screen
         name='Post Announcement'
-        component={Notifications}
+        component={UnderConstructionPage}
         options={{
-          drawerLabel: () => <Text>Screen 1</Text>,
+          drawerLabel: () => null,
           title: null,
           drawerIcon: () => null,
         }}
       />
       <Drawer.Screen
         name='Send Push Notification'
-        component={Notifications}
+        component={UnderConstructionPage}
         options={{
           drawerLabel: () => null,
           title: null,
@@ -264,13 +267,271 @@ export function MyDrawer() {
       />
       <Drawer.Screen
         name='Add Upcoming Event'
-        component={Notifications}
+        component={UnderConstructionPage}
         options={{
           drawerLabel: () => null,
           title: null,
           drawerIcon: () => null,
         }}
       />
+      <Drawer.Screen
+        name='Create New Shoutout'
+        component={UnderConstructionPage}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+
+      {/* Performance Screen */}
+
+      <Drawer.Screen
+        name='Manage Staff Goals'
+        component={UnderConstructionPage}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+
+      <Drawer.Screen
+        name='View Sales Reports'
+        component={UnderConstructionPage}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+
+      <Drawer.Screen
+        name='Manage Benchmarks'
+        component={UnderConstructionPage}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+
+      <Drawer.Screen
+        name='Manage Staff PIP'
+        component={UnderConstructionPage}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+
+      {/* Engagement Screens */}
+
+      <Drawer.Screen
+        name='Create New Survey'
+        component={UnderConstructionPage}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+
+      <Drawer.Screen
+        name='View Staff Analytics'
+        component={UnderConstructionPage}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+
+      <Drawer.Screen
+        name='Employee Feedback'
+        component={UnderConstructionPage}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+
+      <Drawer.Screen
+        name='Manage Rewards'
+        component={UnderConstructionPage}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+
+      {/* Development Screens */}
+
+      <Drawer.Screen
+        name='Training Docs/Files'
+        component={TrainingResource}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+
+      <Drawer.Screen
+        name='Education Hours'
+        component={UnderConstructionPage}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+
+      <Drawer.Screen
+        name='Manage Flashcards'
+        component={UnderConstructionPage}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+
+      <Drawer.Screen
+        name='Training Videos'
+        component={UnderConstructionPage}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+
+      {/* Onboarding Screens */}
+
+      <Drawer.Screen
+        name='Create Checklist'
+        component={UnderConstructionPage}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+
+      <Drawer.Screen
+        name='Manage Applicants'
+        component={UnderConstructionPage}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+
+      <Drawer.Screen
+        name='View Signed Docs'
+        component={UnderConstructionPage}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+
+      <Drawer.Screen
+        name='Manage Mentors'
+        component={UnderConstructionPage}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+
+      {/* Employees Screens */}
+
+      <Drawer.Screen
+        name='Manage Locations'
+        component={UnderConstructionPage}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+
+      <Drawer.Screen
+        name='Time Off Requests'
+        component={UnderConstructionPage}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+
+      <Drawer.Screen
+        name='Employee Schedules'
+        component={UnderConstructionPage}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+
+      <Drawer.Screen
+        name='Employee Profiles'
+        component={UnderConstructionPage}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+
+      {/* Resources Screens */}
+      <Drawer.Screen
+        name='Company Policies'
+        component={UnderConstructionPage}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+      <Drawer.Screen
+        name='Employee Handbook'
+        component={UnderConstructionPage}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+      <Drawer.Screen
+        name='Manage FAQs'
+        component={UnderConstructionPage}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+      <Drawer.Screen
+        name='External Links'
+        component={UnderConstructionPage}
+        options={{
+          drawerLabel: () => null,
+          title: null,
+          drawerIcon: () => null,
+        }}
+      />
+
     </Drawer.Navigator>
   );
 }

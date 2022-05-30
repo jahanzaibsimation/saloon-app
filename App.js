@@ -11,8 +11,11 @@ import TrainingResource from './src/screens/TrainingResource';
 import { MyDrawer2 } from './src/navigations/MyDrawer2';
 import StackNavigator from './src/navigations/StackNavigator/StackNavigator';
 import PdfViewer from './src/components/PdfViewer';
+import { IntroScreen } from './src/screens/IntroScreen';
+import { Provider } from 'react-redux';
 
 export default function App() {
+
   return (
     // <NativeBaseProvider>
     //   <View style={styles.container}>
@@ -22,9 +25,13 @@ export default function App() {
     // </NativeBaseProvider>
     <NativeBaseProvider>
       <NavigationContainer>
+
+        <StackNavigator />
         {/* <StackNavigator /> */}
         {/* <MainDrawerNavigation /> */}
-        <MyDrawer />
+        {/* <MyDrawer /> */}
+        {/* <IntroScreen /> */}
+
       </NavigationContainer>
       <StatusBar style='auto' />
     </NativeBaseProvider>

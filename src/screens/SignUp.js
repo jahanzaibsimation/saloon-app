@@ -3,7 +3,7 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
-  SafeAreaView,ImageBackground
+  SafeAreaView, ImageBackground
 } from 'react-native';
 import React, { useState } from 'react';
 import {
@@ -26,6 +26,7 @@ import moment from 'moment';
 import PickerModal from 'react-native-picker-modal-view';
 import cityData from '../../dummyData/city.json';
 import { blue, white } from '../utils/Color';
+import * as Animatable from 'react-native-animatable';
 
 const SignUp = ({ navigation }) => {
   const [selectedItem, setSelectedItem] = useState({});
@@ -100,148 +101,152 @@ const SignUp = ({ navigation }) => {
         <SafeAreaView style={{ flex: 1 }}>
           <Center w="100%" h="90%">
             <Box safeArea w="100%" maxW="290">
-              <Image
+              <Animatable.Image
+                animation='bounceInLeft'
+                duration={1500}
                 resizeMode="contain"
-                style={{ width: "100%", height: 70, marginTop: 50,marginBottom:20 }}
+                style={{ width: "100%", height: 70, marginTop: 50, marginBottom: 20 }}
                 source={require("../../assets/logos/Full-Logo-Midnight-Blue.png")}
               />
-              <VStack space={3} mt="0">
-                <FormControl>
-                  <FormControl.Label>First Name:*</FormControl.Label>
-                  <Input size="md" />
-                </FormControl>
-                <FormControl>
-                  <FormControl.Label>Last Name:*</FormControl.Label>
-                  <Input size="md" />
-                </FormControl>
-                <FormControl>
-                  <FormControl.Label>Current Level:*</FormControl.Label>
+              <Animatable.View animation='bounceInRight'>
+                <VStack space={3} mt="0">
+                  <FormControl>
+                    <FormControl.Label>First Name:*</FormControl.Label>
+                    <Input size="md" />
+                  </FormControl>
+                  <FormControl>
+                    <FormControl.Label>Last Name:*</FormControl.Label>
+                    <Input size="md" />
+                  </FormControl>
+                  <FormControl>
+                    <FormControl.Label>Current Level:*</FormControl.Label>
 
-                  <Select
-                    selectedValue={level}
-                    minWidth="200"
-                    accessibilityLabel="Choose Levels"
-                    placeholder="Choose Levels"
-                    _selectedItem={{
-                      bg: "teal.600",
-                      endIcon: <CheckIcon size="5" />,
-                    }}
-                    mt={1}
-                    onValueChange={(itemValue) => setLevel(itemValue)}
-                  >
-                    {levels.map((val, i) => (
-                      <Select.Item
-                        key={i}
-                        label={val.label}
-                        value={val.value}
-                      />
-                    ))}
-                  </Select>
-                </FormControl>
-                <FormControl>
-                  <FormControl.Label>Date of Birth:*</FormControl.Label>
-
-                  <TouchableOpacity onPress={() => showDatePicker(true)}>
-                    <Box
-                      p={3}
-                      borderWidth="1"
-                      borderColor="coolGray.300"
-                      borderRadius="md"
+                    <Select
+                      selectedValue={level}
+                      minWidth="200"
+                      accessibilityLabel="Choose Levels"
+                      placeholder="Choose Levels"
+                      _selectedItem={{
+                        bg: "teal.600",
+                        endIcon: <CheckIcon size="5" />,
+                      }}
+                      mt={1}
+                      onValueChange={(itemValue) => setLevel(itemValue)}
                     >
-                      <Text>{dobPlaceh}</Text>
-                    </Box>
-                  </TouchableOpacity>
-                  <DateTimePickerModal
-                    isVisible={isDobPickerVisible}
-                    mode="date"
-                    onConfirm={(e) => handleDateConfirm(e, true)}
-                    onCancel={() => hideDatePicker(true)}
-                  />
-                </FormControl>
-                <FormControl>
-                  <FormControl.Label>Date of Hire:*</FormControl.Label>
-                  <TouchableOpacity onPress={() => showDatePicker(false)}>
-                    <Box
-                      p={3}
-                      borderWidth="1"
-                      borderColor="coolGray.300"
-                      borderRadius="md"
-                    >
-                      <Text>{dohPlaceh}</Text>
-                    </Box>
-                  </TouchableOpacity>
-                  <DateTimePickerModal
-                    isVisible={isDohPickerVisible}
-                    mode="date"
-                    onConfirm={(e) => handleDateConfirm(e, false)}
-                    onCancel={() => hideDatePicker(false)}
-                  />
-                </FormControl>
-                <FormControl>
-                  <FormControl.Label>Phone No:</FormControl.Label>
-                  <PhoneInput />
-                </FormControl>
-                <FormControl>
-                  <FormControl.Label>Location:*</FormControl.Label>
+                      {levels.map((val, i) => (
+                        <Select.Item
+                          key={i}
+                          label={val.label}
+                          value={val.value}
+                        />
+                      ))}
+                    </Select>
+                  </FormControl>
+                  <FormControl>
+                    <FormControl.Label>Date of Birth:*</FormControl.Label>
 
-                  {console.log(typeof selectedItem)}
-                  <PickerModal
-                    renderSelectView={(disabled, selected, showModal) => (
-                      <TouchableOpacity disabled={disabled} onPress={showModal}>
-                        <Box
-                          p={3}
-                          borderWidth="1"
-                          borderColor="coolGray.300"
-                          borderRadius="md"
-                        >
-                          <Text>
-                            {Object.keys(selectedItem).length > 0
-                              ? selectedItem.Name
-                              : "Please Select City"}
-                          </Text>
-                        </Box>
-                      </TouchableOpacity>
-                    )}
-                    onSelected={onSelected}
-                    onClosed={onClosed}
-                    onBackButtonPressed={onBackButtonPressed}
-                    items={cityData}
-                    sortingLanguage={"tr"}
-                    showToTopButton={true}
-                    selected={selectedItem}
-                    showAlphabeticalIndex={true}
-                    autoGenerateAlphabeticalIndex={true}
-                    selectPlaceholderText={"Choose one..."}
-                    onEndReached={() => console.log("list ended...")}
-                    searchPlaceholderText={"Search..."}
-                    requireSelection={false}
-                    autoSort={false}
-                  />
-                </FormControl>
+                    <TouchableOpacity onPress={() => showDatePicker(true)}>
+                      <Box
+                        p={3}
+                        borderWidth="1"
+                        borderColor="coolGray.300"
+                        borderRadius="md"
+                      >
+                        <Text>{dobPlaceh}</Text>
+                      </Box>
+                    </TouchableOpacity>
+                    <DateTimePickerModal
+                      isVisible={isDobPickerVisible}
+                      mode="date"
+                      onConfirm={(e) => handleDateConfirm(e, true)}
+                      onCancel={() => hideDatePicker(true)}
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <FormControl.Label>Date of Hire:*</FormControl.Label>
+                    <TouchableOpacity onPress={() => showDatePicker(false)}>
+                      <Box
+                        p={3}
+                        borderWidth="1"
+                        borderColor="coolGray.300"
+                        borderRadius="md"
+                      >
+                        <Text>{dohPlaceh}</Text>
+                      </Box>
+                    </TouchableOpacity>
+                    <DateTimePickerModal
+                      isVisible={isDohPickerVisible}
+                      mode="date"
+                      onConfirm={(e) => handleDateConfirm(e, false)}
+                      onCancel={() => hideDatePicker(false)}
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <FormControl.Label>Phone No:</FormControl.Label>
+                    <PhoneInput />
+                  </FormControl>
+                  <FormControl>
+                    <FormControl.Label>Location:*</FormControl.Label>
 
-                <Checkbox width="4/5">I agree not to share, copy, or sell any resources or personal data found on SalonsSymphony </Checkbox>
-                <TouchableOpacity
-                  style={{
-                    backgroundColor: "#090C4E",
-                    width: "100%",
-                    paddingVertical: 15,
-                    borderRadius: 20,
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                  onPress={() => navigation.navigate("Signup")}
-                >
-                  <Text
+                    {console.log(typeof selectedItem)}
+                    <PickerModal
+                      renderSelectView={(disabled, selected, showModal) => (
+                        <TouchableOpacity disabled={disabled} onPress={showModal}>
+                          <Box
+                            p={3}
+                            borderWidth="1"
+                            borderColor="coolGray.300"
+                            borderRadius="md"
+                          >
+                            <Text>
+                              {Object.keys(selectedItem).length > 0
+                                ? selectedItem.Name
+                                : "Please Select City"}
+                            </Text>
+                          </Box>
+                        </TouchableOpacity>
+                      )}
+                      onSelected={onSelected}
+                      onClosed={onClosed}
+                      onBackButtonPressed={onBackButtonPressed}
+                      items={cityData}
+                      sortingLanguage={"tr"}
+                      showToTopButton={true}
+                      selected={selectedItem}
+                      showAlphabeticalIndex={true}
+                      autoGenerateAlphabeticalIndex={true}
+                      selectPlaceholderText={"Choose one..."}
+                      onEndReached={() => console.log("list ended...")}
+                      searchPlaceholderText={"Search..."}
+                      requireSelection={false}
+                      autoSort={false}
+                    />
+                  </FormControl>
+
+                  <Checkbox width="4/5">I agree not to share, copy, or sell any resources or personal data found on SalonsSymphony </Checkbox>
+                  <TouchableOpacity
                     style={{
-                      color: "#F2F2F2",
-                      fontSize: 17,
-                      fontWeight: "600",
+                      backgroundColor: "#090C4E",
+                      width: "100%",
+                      paddingVertical: 15,
+                      borderRadius: 20,
+                      justifyContent: "center",
+                      alignItems: "center",
                     }}
+                    onPress={() => navigation.navigate("Signup")}
                   >
-                    Sign Up
-                  </Text>
-                </TouchableOpacity>
-              </VStack>
+                    <Text
+                      style={{
+                        color: "#F2F2F2",
+                        fontSize: 17,
+                        fontWeight: "600",
+                      }}
+                    >
+                      Sign Up
+                    </Text>
+                  </TouchableOpacity>
+                </VStack>
+              </Animatable.View>
             </Box>
           </Center>
         </SafeAreaView>

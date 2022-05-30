@@ -39,17 +39,17 @@ export const drawerData2 = [
       },
       {
         id: 2,
-        name: ' View Sales Reports',
+        name: 'View Sales Reports',
         icon: { name: 'bell', service: 'FontAwesome5' },
       },
       {
         id: 3,
-        name: '  Manage Benchmarks',
+        name: 'Manage Benchmarks',
         icon: { name: 'bell', service: 'FontAwesome5' },
       },
       {
         id: 4,
-        name: '  Manage Staff PIP',
+        name: 'Manage Staff PIP',
         icon: { name: 'bell', service: 'FontAwesome5' },
       },
     ],
