@@ -32,8 +32,8 @@ export const Login = ({ navigation }) => {
             animation='bounceIn'
             duration={1500}
             resizeMode="contain"
-            source={require("../../assets/logos/Full-Logo-Midnight-Blue.png")}
-            style={{ width: "100%", height: 70, marginVertical: 50 }}
+            source={require("../../assets/logos/SS-Teal-Full-Black-Logo.png")}
+            style={{ width: "100%", height: '10%', marginVertical: 50 }}
 
           />
           <Animatable.View animation='fadeInUpBig' >

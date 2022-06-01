@@ -11,22 +11,21 @@ import TrainingResource from './src/screens/TrainingResource';
 import { MyDrawer2 } from './src/navigations/MyDrawer2';
 import StackNavigator from './src/navigations/StackNavigator/StackNavigator';
 import PdfViewer from './src/components/PdfViewer';
-import { IntroScreen } from './src/screens/IntroScreen';
 import { Provider } from 'react-redux';
+import CustomModalPicker from './src/components/CustomModalPicker';
+import SendPushNotification from './src/screens/Annoucements/SendPushNotification';
 
 export default function App() {
 
   return (
     // <NativeBaseProvider>
-    //   <View style={styles.container}>
-    //     <TrainingResource />
-    //     {/* <PdfViewer /> */}
-    //   </View>
+
+    //   <CustomModalPicker />
     // </NativeBaseProvider>
     <NativeBaseProvider>
       <NavigationContainer>
+        <SendPushNotification />
 
-        <StackNavigator />
         {/* <StackNavigator /> */}
         {/* <MainDrawerNavigation /> */}
         {/* <MyDrawer /> */}

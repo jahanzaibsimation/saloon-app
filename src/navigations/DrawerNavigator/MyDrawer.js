@@ -18,14 +18,6 @@ import { drawerData2 } from '../../../dummyData/drawer2';
 import TrainingResource from '../../screens/TrainingResource';
 import UnderConstructionPage from '../../screens/UnderConstructionPage';
 
-function Notifications() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Notifications Screen</Text>
-    </View>
-  );
-}
-
 function CustomIcons({ name, size, color, service, width }) {
   if (service === 'FontAwesome5') {
     return (

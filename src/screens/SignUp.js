@@ -30,8 +30,6 @@ import * as Animatable from 'react-native-animatable';
 
 const SignUp = ({ navigation }) => {
   const [selectedItem, setSelectedItem] = useState({});
-  const [arr, setArr] = useState(new Array(1000).fill('Hello World'));
-  //console.log(customizeCities);
   const [city, setCity] = useState({});
   const [level, setLevel] = useState({});
   const [vis, setVis] = useState(true);
@@ -105,8 +103,8 @@ const SignUp = ({ navigation }) => {
                 animation='bounceInLeft'
                 duration={1500}
                 resizeMode="contain"
-                style={{ width: "100%", height: 70, marginTop: 50, marginBottom: 20 }}
-                source={require("../../assets/logos/Full-Logo-Midnight-Blue.png")}
+                style={{ width: "100%", height: '10%', marginTop: 50, marginBottom: 20 }}
+                source={require("../../assets/logos/SS-Teal-Full-Black-Logo.png")}
               />
               <Animatable.View animation='bounceInRight'>
                 <VStack space={3} mt="0">
@@ -226,18 +224,19 @@ const SignUp = ({ navigation }) => {
                   <Checkbox width="4/5">I agree not to share, copy, or sell any resources or personal data found on SalonsSymphony </Checkbox>
                   <TouchableOpacity
                     style={{
-                      backgroundColor: "#090C4E",
+                      backgroundColor: blue,
                       width: "100%",
                       paddingVertical: 15,
                       borderRadius: 20,
                       justifyContent: "center",
                       alignItems: "center",
+                      marginBottom: 50
                     }}
                     onPress={() => navigation.navigate("Signup")}
                   >
                     <Text
                       style={{
-                        color: "#F2F2F2",
+                        color: white,
                         fontSize: 17,
                         fontWeight: "600",
                       }}

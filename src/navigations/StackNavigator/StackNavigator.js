@@ -16,7 +16,7 @@ import { Login, LoginForm } from '../../screens/Login';
 import SignUp from '../../screens/SignUp';
 import { MyDrawer } from '../DrawerNavigator/MyDrawer';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { IntroScreen } from '../../screens/IntroScreen';
+import { IntroScreen } from '../../screens/IntroScreen/IntroScreen';
 
 const MainPage = ({ navigation }) => {
   return (
