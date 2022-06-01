@@ -62,19 +62,19 @@ const SignUp = ({ navigation }) => {
 
   const hideDatePicker = (isDob) => {
     if (isDob) {
-      isDobPickerVisible(false);
+      setIsDobPickerVisibility(false);
     } else {
-      isDohPickerVisible(false);
+      setIsDohPickerVisibility(false);
     }
   };
 
   const handleDateConfirm = (date, isDob) => {
     if (isDob) {
       setDobPlaceh(moment(date).format('DD MM YYYY').toString());
-      hideDatePicker(true);
+      setIsDobPickerVisibility(false)
     } else {
       setDohPlaceh(moment(date).format('DD MM YYYY').toString());
-      hideDatePicker(false);
+      setIsDohPickerVisibility(false)
     }
   };
 
@@ -186,7 +186,7 @@ const SignUp = ({ navigation }) => {
                   <FormControl>
                     <FormControl.Label>Location:*</FormControl.Label>
 
-                    {console.log(typeof selectedItem)}
+
                     <PickerModal
                       renderSelectView={(disabled, selected, showModal) => (
                         <TouchableOpacity disabled={disabled} onPress={showModal}>

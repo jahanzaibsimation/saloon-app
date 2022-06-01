@@ -9,7 +9,7 @@ import CustomModalPicker from '../../components/CustomModalPicker';
 import * as Animatable from 'react-native-animatable';
 import { AntDesign } from '@expo/vector-icons'
 
-const SendPushNotification = () => {
+const PostAnnouncement = () => {
     const [scheduleDate, setScheduleDate] = useState('Please Select a Date')
     const [hideDatePicker, setHideDatePicker] = useState(false)
     const handleDateConfirm = (date) => {
@@ -21,13 +21,13 @@ const SendPushNotification = () => {
             <Stack style={styles.header} direction='row' mt='10' >
                 <Text color={blue} fontSize='lg' bold >Annoucements </Text>
                 <AntDesign style={{ marginTop: 10, marginRight: 10, color: blue }} name='doubleright' size={10} />
-                <Text color={blue} fontSize='lg' bold >Push Notification</Text>
+                <Text color={blue} fontSize='lg' bold >Create New</Text>
             </Stack>
             <Animatable.View style={styles.container} animation='fadeInUpBig' >
                 <Box bg={'coolGray.100'} h='90%' w='90%' pt="8" pl='4' rounded="lg" shadow={2}>
                     <Stack direction="row" >
                         <FontAwesome name='bullhorn' size={25} color={blue} />
-                        <Text style={styles.title}>Send Push Notification</Text>
+                        <Text style={styles.title}>Create New Annoucements</Text>
                     </Stack>
 
                     <Stack direction="column" >
@@ -44,7 +44,7 @@ const SendPushNotification = () => {
                         </FormControl>
 
                         <FormControl>
-                            <FormControl.Label>Send on:</FormControl.Label>
+                            <FormControl.Label>Expiration:</FormControl.Label>
                             <TouchableOpacity onPress={() => setHideDatePicker(true)}>
                                 <Box
                                     p={3}
@@ -66,7 +66,7 @@ const SendPushNotification = () => {
                         </FormControl>
 
                         <FormControl>
-                            <FormControl.Label>Send to:</FormControl.Label>
+                            <FormControl.Label>Send on:</FormControl.Label>
                             <CustomModalPicker />
                         </FormControl>
 
@@ -120,4 +120,5 @@ const styles = StyleSheet.create({
     }
 
 })
-export default SendPushNotification
+
+export default PostAnnouncement

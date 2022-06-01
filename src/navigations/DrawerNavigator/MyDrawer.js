@@ -17,6 +17,8 @@ import { Box, Divider, Image } from 'native-base';
 import { drawerData2 } from '../../../dummyData/drawer2';
 import TrainingResource from '../../screens/TrainingResource';
 import UnderConstructionPage from '../../screens/UnderConstructionPage';
+import SendPushNotification from '../../screens/Annoucements/SendPushNotification';
+import PostAnnouncement from '../../screens/Annoucements/PostAnnouncement';
 
 function CustomIcons({ name, size, color, service, width }) {
   if (service === 'FontAwesome5') {
@@ -241,7 +243,7 @@ export function MyDrawer() {
 
       <Drawer.Screen
         name='Post Announcement'
-        component={UnderConstructionPage}
+        component={PostAnnouncement}
         options={{
           drawerLabel: () => null,
           title: null,
@@ -250,7 +252,7 @@ export function MyDrawer() {
       />
       <Drawer.Screen
         name='Send Push Notification'
-        component={UnderConstructionPage}
+        component={SendPushNotification}
         options={{
           drawerLabel: () => null,
           title: null,

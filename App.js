@@ -24,9 +24,9 @@ export default function App() {
     // </NativeBaseProvider>
     <NativeBaseProvider>
       <NavigationContainer>
-        <SendPushNotification />
+        {/* <SendPushNotification /> */}
 
-        {/* <StackNavigator /> */}
+        <StackNavigator />
         {/* <MainDrawerNavigation /> */}
         {/* <MyDrawer /> */}
         {/* <IntroScreen /> */}

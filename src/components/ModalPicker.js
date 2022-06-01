@@ -12,7 +12,6 @@ const ModalPicker = ({ changeModalVisibility, setData }) => {
         setData(option)
     }
     const option = userNames.map((item, index) => {
-        // console.log(userNames)
         return (
             <TouchableOpacity style={styles.option} key={index} onPress={() => onPressItem(item.name)}>
                 <Text style={styles.text}>
@@ -52,8 +51,7 @@ const styles = StyleSheet.create({
     },
     text: {
         margin: 20,
-        fontSize: 20,
-        fontWeight: 'bold'
+        fontSize: 15,
     }
 })
 

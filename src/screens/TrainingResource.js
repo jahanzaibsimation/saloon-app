@@ -13,8 +13,8 @@ const TrainingResource = () => {
         <Animatable.View animation='bounceInLeft' style={{ marginTop: '10%' }}>
             <Stack direction="column" m="2.5" mt="1.5" space={3}>
                 <Stack direction='row' >
-                    <Text fontSize='lg'>Development </Text>
-                    <AntDesign style={{ marginTop: 10, marginRight: 10 }} name='doubleright' size={10} />
+                    <Text color={blue} bold fontSize='lg'>Development </Text>
+                    <AntDesign style={{ marginTop: 10, marginRight: 10, color: blue }} name='doubleright' size={10} />
                     <Text color={blue} bold fontSize='lg'>Training Docs</Text>
 
 
