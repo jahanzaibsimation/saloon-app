@@ -14,26 +14,27 @@ import PdfViewer from './src/components/PdfViewer';
 import { Provider } from 'react-redux';
 import CustomModalPicker from './src/components/CustomModalPicker';
 import SendPushNotification from './src/screens/Annoucements/SendPushNotification';
+import UserList from './src/screens/UserList/UserList';
 
 export default function App() {
 
   return (
-    // <NativeBaseProvider>
-
-    //   <CustomModalPicker />
-    // </NativeBaseProvider>
     <NativeBaseProvider>
-      <NavigationContainer>
-        {/* <SendPushNotification /> */}
 
-        <StackNavigator />
-        {/* <MainDrawerNavigation /> */}
-        {/* <MyDrawer /> */}
-        {/* <IntroScreen /> */}
-
-      </NavigationContainer>
-      <StatusBar style='auto' />
+      <UserList />
     </NativeBaseProvider>
+    // <NativeBaseProvider>
+    //   <NavigationContainer>
+    //     {/* <SendPushNotification /> */}
+
+    //     <StackNavigator />
+    //     {/* <MainDrawerNavigation /> */}
+    //     {/* <MyDrawer /> */}
+    //     {/* <IntroScreen /> */}
+
+    //   </NavigationContainer>
+    //   <StatusBar style='auto' />
+    // </NativeBaseProvider>
   );
 }
 
