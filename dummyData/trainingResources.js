@@ -1,8 +1,8 @@
 export const trainingResources = [
     {
         id: 1,
-        imgUrl: 'https://res.cloudinary.com/dk8gytkuo/image/upload/v1653510677/saloonapp/smooth-infusion_erryv7.jpg',
-        title: 'Smooth Infusion',
+        imgUrl: 'https://res.cloudinary.com/dk8gytkuo/image/upload/v1654728151/saloonapp/smooth_qw11zw.jpg',
+        title: 'Smooth Infusion™',
         tags: [
             {
                 id: 1,
@@ -20,16 +20,12 @@ export const trainingResources = [
     },
     {
         id: 2,
-        imgUrl: 'https://res.cloudinary.com/dk8gytkuo/image/upload/v1653510677/saloonapp/loreal-hair-color_p1lkn6.jpg',
-        title: 'Loreal Hair Color',
+        imgUrl: 'https://res.cloudinary.com/dk8gytkuo/image/upload/v1654728070/saloonapp/botan_te5txy.jpg',
+        title: 'Botanical Kinetics™',
         tags: [
             {
                 id: 1,
-                name: 'Hair Care'
-            },
-            {
-                id: 2,
-                name: 'Hair Style'
+                name: 'Skin Care'
             },
             {
                 id: 3,

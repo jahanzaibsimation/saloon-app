@@ -11,125 +11,104 @@ import {
 
   VStack,
 } from 'native-base';
-import { View, Image, ImageBackground, TouchableOpacity, Animated } from "react-native";
+import { View, Image, ImageBackground, TouchableOpacity, Animated, StyleSheet } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { blue } from '../utils/Color';
+import { blue, white } from '../utils/Color';
 import * as Animatable from 'react-native-animatable';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
+import CustomButton from '../components/CustomButton';
 
 export const Login = ({ navigation }) => {
   return (
-    <ImageBackground
-      resizeMode="cover"
-      style={{ height: "100%", width: "100%", backgroundColor: "white" }}
-      source={require("../../assets/images/saloon.jpg")}
-      blurRadius={1}
-      imageStyle={{ opacity: 0.1 }}
-    >
-      <Center w="100%">
+
+    <SafeAreaView style={{ flex: 1 }} backgroundColor={white}>
+      <TouchableOpacity style={styles.signupButton} onPress={() => navigation.navigate("Signup")}>
+        <Text bold color={blue}>Register</Text>
+      </TouchableOpacity>
+      <Center w="100%" >
         <Box safeArea w="90%" maxW="290">
           <Animatable.Image
             animation='bounceIn'
             duration={1500}
             resizeMode="contain"
-            source={require("../../assets/logos/SS-Teal-Full-Black-Logo.png")}
-            style={{ width: "100%", height: '10%', marginVertical: 50 }}
+            source={require("../../assets/logos/SalonSymphony-Logo-Blue-Small.png")}
+            style={styles.imageStyle}
 
           />
           <Animatable.View animation='fadeInUpBig' >
-            <Heading
-              size="lg"
-              fontWeight="600"
-              color="coolGray.800"
-              _dark={{
-                color: "warmGray.50",
-              }}
-              style={{ textAlign: "center" }}
-            >
-              Welcome
-            </Heading>
-            <Heading
-              mt="1"
-              _dark={{
-                color: "warmGray.200",
-              }}
-              color="coolGray.600"
-              fontWeight="medium"
-              size="xs"
-              style={{ textAlign: "center" }}
-            >
-              Sign in to continue!
-            </Heading>
 
-            <VStack space={3} mt="5">
+            <VStack space={3} mt="3">
               <FormControl>
-                <FormControl.Label>Email ID</FormControl.Label>
-                <Input size="md" />
-                {/* <MaterialCommunityIcons name='email' style={{ marginRight: 20 }} size={16} /> */}
+                <View style={styles.formLabelView}>
+                  <Text backgroundColor={white} bold color={blue}>Email ID</Text>
+                </View>
+                <Input backgroundColor={white} size="md" zIndex={-999} />
 
               </FormControl>
               <FormControl>
-                <FormControl.Label>Password</FormControl.Label>
-                <Input size="md" type="password" />
+                <View style={styles.formLabelView}>
+                  <Text backgroundColor={white} bold color={blue}>Password</Text>
+                </View>
+                <Input backgroundColor={white} size="md" type="password" zIndex={-999} />
 
-                <TouchableOpacity>
-                  <Text style={{
-                    color: "#090C4E"
-                    , fontWeight: "600", textAlign: "right", marginTop: 10
-                  }}>Forget Password?</Text>
-                </TouchableOpacity>
+
               </FormControl>
 
               <HStack mt="1" justifyContent="center">
-                <TouchableOpacity
-                  style={{
-                    backgroundColor: "#090C4E",
-                    width: "100%",
-                    paddingVertical: 15,
-                    borderRadius: 20,
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                  onPress={() => navigation.navigate("Drawer")}
-                >
-                  <Text
-                    style={{
-                      color: "#F2F2F2",
-                      fontSize: 17,
-                      fontWeight: "600",
-                    }}
+                <CustomButton onPress={() => navigation.navigate("Drawer")} text={'Sign In'} />
+                {/* <Button onPress={} mt="2" width={'100%'} backgroundColor={blue} color={white} >
+                  <Text bold
+                    style={styles.signinText}
                   >
                     Sign In
                   </Text>
-                </TouchableOpacity>
+                </Button> */}
+
               </HStack>
-              <HStack mt="1" justifyContent="center">
-                <TouchableOpacity
-                  style={{
-                    backgroundColor: "#090C4E",
-                    width: "100%",
-                    paddingVertical: 15,
-                    borderRadius: 20,
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                  onPress={() => navigation.navigate("Signup")}
-                >
-                  <Text
-                    style={{
-                      color: "#F2F2F2",
-                      fontSize: 17,
-                      fontWeight: "600",
-                    }}
-                  >
-                    Sign Up
-                  </Text>
-                </TouchableOpacity>
-              </HStack>
+              <TouchableOpacity>
+                <Text style={{
+                  color: blue
+                  , fontWeight: "600", textAlign: "center", marginTop: 10
+                }}>Forget Password?</Text>
+              </TouchableOpacity>
+              <View style={{ top: 40 }}>
+                <Text style={{ fontSize: 12 }} color={blue}>Salon Symphony is only available to register salons.
+                </Text>
+                <Text style={{ textAlign: 'center', fontSize: 12 }} color={blue}>
+                  If you have trouble signing in, please contact your manager for assistance</Text>
+              </View>
+
             </VStack>
           </Animatable.View>
         </Box>
       </Center>
-    </ImageBackground>
+    </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  formLabelView: {
+    display: 'flex',
+    left: 20,
+    top: 10,
+    width: 80,
+    backgroundColor: white,
+    alignItems: 'center'
+  },
+  imageStyle: {
+    width: "100%",
+    height: '20%',
+    marginVertical: 50
+  },
+  signupButton: {
+    alignSelf: 'flex-end',
+    right: 20,
+    top: 10
+  },
+
+  signinText: {
+    color: white,
+    fontSize: 17,
+
+  }
+})

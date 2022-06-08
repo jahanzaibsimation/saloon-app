@@ -27,6 +27,7 @@ import PickerModal from 'react-native-picker-modal-view';
 import cityData from '../../dummyData/city.json';
 import { blue, white } from '../utils/Color';
 import * as Animatable from 'react-native-animatable';
+import CustomButton from '../components/CustomButton';
 
 const SignUp = ({ navigation }) => {
   const [selectedItem, setSelectedItem] = useState({});
@@ -96,18 +97,18 @@ const SignUp = ({ navigation }) => {
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
       >
-        <SafeAreaView style={{ flex: 1 }}>
+        <SafeAreaView style={{ flex: 1, top: 30, marginBottom: 30 }}>
           <Center w="100%" h="90%">
             <Box safeArea w="100%" maxW="290">
               <Animatable.Image
                 animation='bounceInLeft'
                 duration={1500}
                 resizeMode="contain"
-                style={{ width: "100%", height: '10%', marginTop: 50, marginBottom: 20 }}
-                source={require("../../assets/logos/SS-Teal-Full-Black-Logo.png")}
+                style={{ width: "100%", height: '10%', marginTop: 50 }}
+                source={require("../../assets/logos/SalonSymphony-Logo-Blue-Small.png")}
               />
               <Animatable.View animation='bounceInRight'>
-                <VStack space={3} mt="0">
+                <VStack space={3} mt="0" mb='30'>
                   <FormControl>
                     <FormControl.Label>First Name:*</FormControl.Label>
                     <Input size="md" />
@@ -222,28 +223,7 @@ const SignUp = ({ navigation }) => {
                   </FormControl>
 
                   <Checkbox width="4/5">I agree not to share, copy, or sell any resources or personal data found on SalonsSymphony </Checkbox>
-                  <TouchableOpacity
-                    style={{
-                      backgroundColor: blue,
-                      width: "100%",
-                      paddingVertical: 15,
-                      borderRadius: 20,
-                      justifyContent: "center",
-                      alignItems: "center",
-                      marginBottom: 50
-                    }}
-                    onPress={() => navigation.navigate("Signup")}
-                  >
-                    <Text
-                      style={{
-                        color: white,
-                        fontSize: 17,
-                        fontWeight: "600",
-                      }}
-                    >
-                      Sign Up
-                    </Text>
-                  </TouchableOpacity>
+                  <CustomButton text={'Sign Up'} onPress={() => navigation.navigate("Signup")} />
                 </VStack>
               </Animatable.View>
             </Box>

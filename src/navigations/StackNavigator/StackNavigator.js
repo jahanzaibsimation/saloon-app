@@ -45,7 +45,7 @@ const MainPage = ({ navigation }) => {
               <Image
                 resizeMode="contain"
                 style={{ width: 300 }}
-                source={require("../../../assets/logos/Full-Logo-Midnight-Blue.png")}
+                source={require("../../../assets/logos/SalonSymphony-Logo-White-Small.png")}
                 alt="salonsymphony"
               />
               <View style={{ marginLeft: 40 }}>

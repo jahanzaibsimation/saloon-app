@@ -12,7 +12,7 @@ const TagsTrainRes = ({ tags }) => {
             <View style={{ flexDirection: 'row' }} key={element.id}>
                 <Text fontSize="sm" >
                     {element.name}
-                    <Text fontSize='4xl' color={blue} fontWeight="500">. </Text>
+                    <Text fontSize='2xl' color={blue} fontWeight="500">. </Text>
                 </Text>
 
             </View>
@@ -44,7 +44,7 @@ const TrainCard = ({ title, imgUrl, tags, id }) => {
                 <Box h='lg'  >
                     <AspectRatio w="100%" ratio={16 / 20}  >
 
-                        <Image style={{ resizeMode: 'cover', maxHeight: '70%', maxWidth: '100%' }} source={{
+                        <Image style={{ resizeMode: 'cover', maxHeight: '60%', maxWidth: '100%' }} source={{
                             uri: imgUrl
                         }} alt="image" />
                     </AspectRatio>
@@ -55,7 +55,6 @@ const TrainCard = ({ title, imgUrl, tags, id }) => {
                     <Stack pl="4" space={3}>
                         <Stack space={2}>
                             <Heading size="md" ml="-1">
-
                                 {title}
                             </Heading>
 

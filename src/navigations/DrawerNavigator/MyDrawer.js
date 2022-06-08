@@ -101,7 +101,7 @@ function CustomDrawerContent(props) {
           resizeMode='contain'
           alt='salonsymphony'
           resizeMethod='auto'
-          source={require('../../../assets/logos/SS-Teal-Full-White-Logo.png')}
+          source={require('../../../assets/logos/SalonSymphony-Logo-White-Full.png')}
         />
       </View>
     );
@@ -207,7 +207,7 @@ export function MyDrawer() {
       <TouchableOpacity onPress={onPress}>
         <View>
           <Image
-            source={require('../../../assets/logos/CustomIcons.png')}
+            source={require('../../../assets/logos/SalonSymphony-Logo-Blue-Small.png')}
             height={50}
             width={50}
             resizeMode='contain'
