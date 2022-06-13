@@ -22,7 +22,15 @@ export const Ticker = ({ scrollX }) => {
     outputRange: [0, -TICKER_HEIGHT, -TICKER_HEIGHT * 2],
   });
   return (
-
+    // <View style={styles.tickerContainer}>
+    //   <Animated.View style={{ transform: [{ translateY }] }}>
+    //     {slides.map(({ lable }) => {
+    //       return (
+    //         <Text key={lable} style={styles.tickerText}>
+    //           {lable}
+    //         </Text>
+    //       );
+    //     })}
     <Image
       style={{ alignSelf: 'center' }}
       height={100}
@@ -32,7 +40,8 @@ export const Ticker = ({ scrollX }) => {
       resizeMethod='auto'
       source={require('../../../../assets/logos/SalonSymphony-Logo-White-Full.png')}
     />
-
+    //   </Animated.View>
+    // </View>
 
   );
 };

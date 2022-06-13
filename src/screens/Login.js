@@ -18,14 +18,18 @@ import * as Animatable from 'react-native-animatable';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import CustomButton from '../components/CustomButton';
 
-export const Login = ({ navigation }) => {
+const Login = ({ navigation }) => {
   return (
 
-    <SafeAreaView style={{ flex: 1 }} backgroundColor={white}>
-      <TouchableOpacity style={styles.signupButton} onPress={() => navigation.navigate("Signup")}>
-        <Text bold color={blue}>Register</Text>
-      </TouchableOpacity>
-      <Center w="100%" >
+    // <SafeAreaView style={{ flex: 1, backgroundColor: white }}>
+    //   <TouchableOpacity style={styles.signupButton} onPress={() => navigation.navigate("Signup")}>
+    //     <Text bold color={blue}>Register</Text>
+    //   </TouchableOpacity>
+    <View style={{ backgroundColor: white, flex: 1 }}>
+      <Center  >
+        <TouchableOpacity style={styles.signupButton} onPress={() => navigation.navigate("Signup")}>
+          <Text bold color={blue}>Register</Text>
+        </TouchableOpacity>
         <Box safeArea w="90%" maxW="290">
           <Animatable.Image
             animation='bounceIn'
@@ -54,6 +58,27 @@ export const Login = ({ navigation }) => {
               </FormControl>
 
               <HStack mt="1" justifyContent="center">
+                {/* <TouchableOpacity
+                  style={{
+                    backgroundColor: "#090C4E",
+                    width: "100%",
+                    paddingVertical: 15,
+                    borderRadius: 20,
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                  onPress={() => navigation.navigate("Drawer")}
+                >
+                  <Text
+                    style={{
+                      color: "#F2F2F2",
+                      fontSize: 17,
+                      fontWeight: "600",
+                    }}
+                  >
+                    Sign In
+                  </Text>
+                </TouchableOpacity> */}
                 <CustomButton onPress={() => navigation.navigate("Drawer")} text={'Sign In'} />
 
 
@@ -75,9 +100,11 @@ export const Login = ({ navigation }) => {
           </Animatable.View>
         </Box>
       </Center>
-    </SafeAreaView>
+    </View>
+    // </SafeAreaView>
   );
 };
+
 
 const styles = StyleSheet.create({
   formLabelView: {
@@ -96,7 +123,7 @@ const styles = StyleSheet.create({
   signupButton: {
     alignSelf: 'flex-end',
     right: 20,
-    top: 10
+    top: 20
   },
 
   signinText: {
@@ -105,3 +132,5 @@ const styles = StyleSheet.create({
 
   }
 })
+
+export default Login;

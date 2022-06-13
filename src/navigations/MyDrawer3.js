@@ -67,7 +67,7 @@ function CustomIcons({ name, size, color, service, width }) {
 
 function CustomDrawerContent(props) {
   console.log("THis is the app");
-  const CustomDrawerItem = ({ name ,isActive}) => {
+  const CustomDrawerItem = ({ name, isActive }) => {
     const [isFocused, setIsFocused] = useState(false);
     const handleOnPress = () => {
       setIsFocused(true);
@@ -76,7 +76,7 @@ function CustomDrawerContent(props) {
     return (
       <DrawerItem
         label={({ focused, color }) => (
-          <View style={{backgroundColor:isActive ?"green" : "white"}}>
+          <View style={{ backgroundColor: isActive ? "green" : "white" }}>
             <Text
               style={{ marginLeft: "30%", color: isActive ? blue : "black" }}
             >
@@ -101,14 +101,14 @@ function CustomDrawerContent(props) {
           paddingTop: 20,
         }}
       >
-        <Image
+        {/* <Image
           height={100}
           width={250}
           resizeMode="contain"
           alt="salonsymphony"
           resizeMethod="auto"
           source={require("../../../assets/logos/SS-Teal-Full-White-Logo.png")}
-        />
+        /> */}
       </View>
     );
   };
@@ -118,41 +118,41 @@ function CustomDrawerContent(props) {
   const getActiveRoute = (state) => {
     //console.log(state.history);
     let currentRouteKey = state.history[state.history.length - 1].key;
-    if (currentRouteKey == undefined){
+    if (currentRouteKey == undefined) {
       currentRouteKey = state.history[state.history.length - 2].key;
     }
-      if (currentRouteKey && currentRouteKey.length > 0) {
-        const filteredRoutes = state.routes.filter(
-          (route) => route.key == currentRouteKey
-        );
-        if (filteredRoutes && filteredRoutes.length > 0) {
-          const currentRouteName = filteredRoutes[0].name;
-          return currentRouteName;
-        }
-        console.log("Cant find route in route array");
+    if (currentRouteKey && currentRouteKey.length > 0) {
+      const filteredRoutes = state.routes.filter(
+        (route) => route.key == currentRouteKey
+      );
+      if (filteredRoutes && filteredRoutes.length > 0) {
+        const currentRouteName = filteredRoutes[0].name;
+        return currentRouteName;
       }
-     console.log("Cant find route in history");
+      console.log("Cant find route in route array");
+    }
+    console.log("Cant find route in history");
   };
 
-  
+
 
   const ExpandableMenu = ({ name, subMenu, icon }) => {
     const [isOpened, setIsOpened] = useState(false);
-      const activeRoute = getActiveRoute(props.state);
+    const activeRoute = getActiveRoute(props.state);
 
 
-useEffect(()=>{
-    subMenu.forEach((element) => {
-      if (activeRoute == element.name) {
-        setIsOpened(true);
-      }
-    });
-},[])
+    useEffect(() => {
+      subMenu.forEach((element) => {
+        if (activeRoute == element.name) {
+          setIsOpened(true);
+        }
+      });
+    }, [])
 
     const subMenuView = [];
     subMenu.forEach((element) => {
       let isActive = false;
-      if(activeRoute == element.name){
+      if (activeRoute == element.name) {
         isActive = true;
       }
       subMenuView.push(
@@ -223,14 +223,14 @@ export function MyDrawer() {
     return (
       <TouchableOpacity onPress={onPress}>
         <View>
-          <Image
+          {/* <Image
             source={require('../../../assets/logos/CustomIcons.png')}
             height={50}
             width={50}
             resizeMode='contain'
             alt='salonsymphony'
             resizeMethod='auto'
-          />
+          /> */}
         </View>
       </TouchableOpacity>
     );

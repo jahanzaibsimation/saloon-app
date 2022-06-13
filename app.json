@@ -3,7 +3,7 @@
     "name": "saloon-symphony",
     "slug": "saloon-symphony",
     "platforms": ["ios", "android", "web"],
-    "version": "1.0.0",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -18,11 +18,11 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.simation.salonSymphony",
-      "buildNumber": "1"
+      "bundleIdentifier": "com.simationstudio.salonSymphony",
+      "buildNumber": "10"
     },
     "android": {
-      "package": "com.simation.salonSymphony",
+      "package": "com.simationstudio.salonSymphony",
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
