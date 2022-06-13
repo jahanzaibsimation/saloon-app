@@ -10,6 +10,7 @@ import {
 import slides from "../../../../dummyData/IntroSlides";
 //PropTypes check
 import PropTypes from "prop-types";
+import { Image } from "native-base";
 
 const TICKER_HEIGHT = 50;
 const { height, width } = Dimensions.get("window");
@@ -21,17 +22,18 @@ export const Ticker = ({ scrollX }) => {
     outputRange: [0, -TICKER_HEIGHT, -TICKER_HEIGHT * 2],
   });
   return (
-    <View style={styles.tickerContainer}>
-      <Animated.View style={{ transform: [{ translateY }] }}>
-        {slides.map(({ lable }) => {
-          return (
-            <Text key={lable} style={styles.tickerText}>
-              {lable}
-            </Text>
-          );
-        })}
-      </Animated.View>
-    </View>
+
+    <Image
+      style={{ alignSelf: 'center' }}
+      height={100}
+      width={250}
+      resizeMode='contain'
+      alt='salonsymphony'
+      resizeMethod='auto'
+      source={require('../../../../assets/logos/SalonSymphony-Logo-White-Full.png')}
+    />
+
+
   );
 };
 

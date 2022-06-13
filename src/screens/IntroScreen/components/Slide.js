@@ -7,7 +7,7 @@ export const Slide = ({ imageUrl }) => {
     <View style={styles.container}>
       <Image
         style={{
-          marginTop: 40,
+          marginTop: 0,
           resizeMode: "contain",
           width: "90%",
           height: height / 2,

@@ -1,5 +1,5 @@
 import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons'
-import { Text, AspectRatio, Box, Center, Heading, HStack, Image, Stack, Badge } from 'native-base'
+import { Text, AspectRatio, Box, Center, Heading, HStack, Image, Stack, Badge, Divider } from 'native-base'
 import React from 'react'
 import { View, ScrollView } from 'react-native'
 import { trainingResources } from '../../dummyData/trainingResources'
@@ -36,6 +36,9 @@ const TrainingResource = () => {
                     {trainingResources.map(val => (
                         <TrainCard key={val.id} title={val.title} imgUrl={val.imgUrl} tags={val.tags} id={val.id} />
                     ))}
+
+
+
                 </ScrollView>
 
 

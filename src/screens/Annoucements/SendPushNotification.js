@@ -8,6 +8,7 @@ import moment from 'moment';
 import CustomModalPicker from '../../components/CustomModalPicker';
 import * as Animatable from 'react-native-animatable';
 import { AntDesign } from '@expo/vector-icons'
+import CustomButton from '../../components/CustomButton';
 
 const SendPushNotification = () => {
     const [scheduleDate, setScheduleDate] = useState('Please Select a Date')
@@ -70,17 +71,7 @@ const SendPushNotification = () => {
                             <CustomModalPicker />
                         </FormControl>
 
-                        <TouchableOpacity
-                            style={styles.buttonStyle}
-                            onPress={() => { }}
-                        >
-                            <Text
-                                style={styles.buttonText}
-                            >
-                                Send
-                            </Text>
-                        </TouchableOpacity>
-
+                        <CustomButton text={'Send'} onPress={() => { }} width={'90%'} mt={'7'} />
 
                     </Stack>
 

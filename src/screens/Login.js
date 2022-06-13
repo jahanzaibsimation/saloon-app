@@ -29,7 +29,6 @@ export const Login = ({ navigation }) => {
         <Box safeArea w="90%" maxW="290">
           <Animatable.Image
             animation='bounceIn'
-            duration={1500}
             resizeMode="contain"
             source={require("../../assets/logos/SalonSymphony-Logo-Blue-Small.png")}
             style={styles.imageStyle}
@@ -56,13 +55,7 @@ export const Login = ({ navigation }) => {
 
               <HStack mt="1" justifyContent="center">
                 <CustomButton onPress={() => navigation.navigate("Drawer")} text={'Sign In'} />
-                {/* <Button onPress={} mt="2" width={'100%'} backgroundColor={blue} color={white} >
-                  <Text bold
-                    style={styles.signinText}
-                  >
-                    Sign In
-                  </Text>
-                </Button> */}
+
 
               </HStack>
               <TouchableOpacity>

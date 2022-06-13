@@ -3,26 +3,26 @@ const slides = [
   {
     id: 1,
     lable: "Welcome",
-    subtitle: "Welcome To SalonSymphony",
+    subtitle: "Connect and collaborate with your salon team",
     des:
-      "Super charge your salon business",
+      "Notifications, team chat, events feed, shift coverage and more",
     // imageUrl: require("../assets/Images/slides3.png"),
     imageUrl: require("../assets/images/design/slides3.png"),
   },
   {
     id: 2,
     lable: "Introduction",
-    subtitle: "Automate Your Salon",
+    subtitle: "Boost performance and productivity like a pro.",
     des:
-      "Streamline communication, accelerate recruitment, boost engagement, and empower their staff",
+      "Set and track goals to improve your performance - and your paycheck.",
     imageUrl: require("../assets/images/design/slides2.png"),
   },
   {
     id: 3,
     lable: "How It Helps",
-    subtitle: "More Than 24 Features",
+    subtitle: "Plus, a single space for all resources and requests.",
 
-    des: "Enables salon owners to eliminate busywork, giving them the freedom they deserve.",
+    des: "Time off, handbooks, docs, flashcards, product guides and more!",
     imageUrl: require("../assets/images/design/slides1.png"),
   },
 ];

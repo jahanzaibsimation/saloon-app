@@ -12,13 +12,14 @@ export const SubSlide = ({ subtitle, des, last, NextSlide, EnterApp }) => {
   return (
     <View style={styles.subSlideContainer}>
       <CustomText style={styles.subTitle}>{subtitle}</CustomText>
-      <View>
+      <View style={{ width: '90%' }}>
         <Text style={styles.des}>{des}</Text>
       </View>
       <TouchableOpacity onPress={onPressHandler}>
         <View style={[styles.buttonContainer, { backgroundColor: bgColor }]}>
           <Text style={[styles.buttonLabel, { color: labelCover }]}>
-            {last ? "Start App" : "Next"}
+            {/* {last ? "Start App" : "Next"} */}
+            Continue
           </Text>
         </View>
       </TouchableOpacity>
@@ -31,17 +32,23 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    paddingHorizontal: 40,
+    paddingHorizontal: 20,
   },
   subTitle: {
-    fontSize: 24,
-    color: Colors.text,
+    fontSize: 20,
+    color: 'black',
+    fontWeight: 'bold',
+    textAlign: 'center'
+
   },
   des: {
-    fontSize: 18,
-    lineHeight: 30,
+    top: 10,
+    fontSize: 15,
+    lineHeight: 25,
     color: Colors.text,
-    textAlign: "center",
+    marginBottom: 20,
+    textAlign: 'center'
+
   },
   buttonContainer: {
     marginTop: 10,
