@@ -20,11 +20,6 @@ import CustomButton from '../components/CustomButton';
 
 const Login = ({ navigation }) => {
   return (
-
-    // <SafeAreaView style={{ flex: 1, backgroundColor: white }}>
-    //   <TouchableOpacity style={styles.signupButton} onPress={() => navigation.navigate("Signup")}>
-    //     <Text bold color={blue}>Register</Text>
-    //   </TouchableOpacity>
     <View style={{ backgroundColor: white, flex: 1 }}>
       <Center  >
         <TouchableOpacity style={styles.signupButton} onPress={() => navigation.navigate("Signup")}>
@@ -38,7 +33,11 @@ const Login = ({ navigation }) => {
             style={styles.imageStyle}
 
           />
-          <Animatable.View animation='fadeInUpBig' >
+          <Animatable.View
+            animation='fadeInUpBig'
+            resizeMode="contain"
+            source={require("../../assets/logos/SalonSymphony-Logo-Blue-Small.png")}
+            style={styles.imageStyle}>
 
             <VStack space={3} mt="3">
               <FormControl>
@@ -58,30 +57,8 @@ const Login = ({ navigation }) => {
               </FormControl>
 
               <HStack mt="1" justifyContent="center">
-                {/* <TouchableOpacity
-                  style={{
-                    backgroundColor: "#090C4E",
-                    width: "100%",
-                    paddingVertical: 15,
-                    borderRadius: 20,
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                  onPress={() => navigation.navigate("Drawer")}
-                >
-                  <Text
-                    style={{
-                      color: "#F2F2F2",
-                      fontSize: 17,
-                      fontWeight: "600",
-                    }}
-                  >
-                    Sign In
-                  </Text>
-                </TouchableOpacity> */}
+
                 <CustomButton onPress={() => navigation.navigate("Drawer")} text={'Sign In'} />
-
-
               </HStack>
               <TouchableOpacity>
                 <Text style={{
@@ -101,7 +78,6 @@ const Login = ({ navigation }) => {
         </Box>
       </Center>
     </View>
-    // </SafeAreaView>
   );
 };
 

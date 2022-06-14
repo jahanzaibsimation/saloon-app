@@ -38,7 +38,7 @@ export const IntroScreen = ({ navigation }) => {
 
     const EnterApp = async () => {
         setLoading(true);
-        navigation.navigate('Login')
+        await navigation.navigate('Login')
         // await dispatch(CheckFirstTimeAction.firstOpen());
         if (!unmounted.current) {
             setLoading(false);
